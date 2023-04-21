@@ -23,7 +23,38 @@ def intro():
     while True:
         answer = input("> ")
         if answer == "1":
-            print("Correct")
+            print("\nSleep well.\n\n")
+            time.sleep(3)
+            room_one()
+            break
+        else:
+            print("Incorrect value")
+            print("Please, enter a number corresponding with your choice")
+
+
+def room_one():
+    print("Your sleep is sound and undisturbed until you stir from an odd smell.\n")
+    # time.sleep(4)
+    print("It's nothing you've ever encountered before, tangy and sharp,")
+    print("and you're abruptly woken up when your throat clenches.")
+    print('"Gas," you conclude in horror as your eyes water and the uncanny')
+    print('hiss of poisonous air leak into the room.\n')
+    # time.sleep(4)
+    print("Only it's not your room, and you're not in bed --")
+    print("you're slouching against a tiled wall in a cramped space with just enough space to turn and stretch your arms.")
+    print("\nWhat do you do?\n")
+
+    print("1. Feel the walls; there must be something to stop this!\n")
+    print("2. Pinch your arm, certain you must be dreaming, and this will all pass. Right?")
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            print("One")
+            # time.sleep(3)
+            break
+        elif answer == "2":
+            print("Two")
             break
         else:
             print("Incorrect value")
