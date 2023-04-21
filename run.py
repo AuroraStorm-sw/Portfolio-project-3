@@ -42,6 +42,7 @@ def room_one():
     # time.sleep(4)
     print("Only it's not your room, and you're not in bed --")
     print("you're slouching against a tiled wall in a cramped space with just enough space to turn and stretch your arms.")
+
     print("\nWhat do you do?\n")
 
     print("1. Feel the walls; there must be something to stop this!\n")
@@ -74,9 +75,10 @@ def room_two():
     # time.sleep(3)
     print("Your one thought is that where ever you are, you need to get out.\n")
     # time.sleep(3)
-    print("To your right, the hallway leads to an impressive armor and two new directions.")
+    print("To your right, the hallway leads to an impressive armor and two directions.")
     # time.sleep()
-    print("To your left, the hallways lead to a massive portrait and one new direction.")
+    print("To your left, the hallways lead to a massive portrait and one direction.")
+
     print("\nWhat do you do?\n")
 
     print("1. Go right toward the armor.\n")
@@ -102,11 +104,50 @@ def room_two():
             print("Turning to leave, something flashes in those hollow eyes, but as you look again, there's nothing different.\n")
             # time.sleep(3)
             print("A weird feeling sits in your stomach as you proceed.\n")
-            # room_three()
+            room_three()
             break
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
-    
+
+def room_three():
+    print("The corridor turns and twists.\n")
+    # time.sleep(3)
+    print("Walls, and floors in similar red shades making the narrow hallways disorienting even though there's only one way.\n")
+    # time.sleep(3)
+    print('You look back and stare in horror as the previous turn has disappeared, now replaced with a dead end.\n')
+    # time.sleep(3)
+    print("You take a step backward in shock, and just as you do, the floor shifts beneath your feet.\n")
+    # time.sleep(3)
+
+    print("\nWhat do you do?\n")
+
+    print("1. Jump backwards.\n")
+    print("2. Jump forward.\n")
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            print("\nYou leap further down the corridor and miss the trapdoor by barely a centimeter.\n")
+            # time.sleep(3)
+            print("Peering over the edge, the now open space drops into a maw of spikes, ready to impale anyone unfortunate enough to miss their chance.\n")
+            # time.sleep(3)
+            print('If not for your quick reflexes, that would\'ve been you.\n')
+            # time.sleep(3)
+            # room_four()
+            break
+        elif answer == "2":
+            print("\nYou throw yourself towards the dead end.\n")
+            # time.sleep(3)
+            print("But as you step into safety away from the trapdoor, the floor opens up further.\n")
+            # time.sleep(3)
+            print("Your fingers grace the edge of the trapdoor before you fall into a maw of spikes and the floor closes above you.\n")
+            # time.sleep(3)
+            print("Your death is slow and painful.\n")
+            # game_over
+            break
+        else:
+            print("Incorrect value")
+            print("Please, enter a number corresponding with your choice")
 
 intro()
