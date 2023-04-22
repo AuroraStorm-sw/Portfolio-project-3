@@ -44,7 +44,7 @@ def intro():
             room_one()
             break
         elif answer == "2":
-            room_four_choice_four()
+            room_four()
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
@@ -253,6 +253,7 @@ def room_four_choice_one():
     print('Turn around in time to face a spear edge shooting out from the wall.\n')
             # time.sleep(3)
     print("Your death is quick.")
+
     game_over()
 
 
@@ -268,7 +269,8 @@ def room_four_choice_two():
     print("No, you have to get out.")
     print("Someone brought you inside, and you will be able to find out how.\n")
     print("Tired and weary, you must push forward!")
-    # room_five_a()
+
+    room_five_a()
 
 
 def room_four_choice_three():
@@ -278,7 +280,8 @@ def room_four_choice_three():
     print("just in time for a rain of arrows to fly past.")
     # time.sleep(3)
     print("Shaking, tired, and weary, you safely make it through the door and down a slim flight of stairs.")
-    # room_five_b
+
+    room_five_b()
 
 
 def room_four_choice_four():
@@ -287,8 +290,7 @@ def room_four_choice_four():
 
     print("\nHeart racing and head swimming, you decide to sit down in one of the plush armchairs to catch your breath and sense.\n")
     # time.sleep(3)
-    print(
-                "If there is a chance that you've woken up in the actual Murder Castle, ")
+    print("If there is a chance that you've woken up in the actual Murder Castle, ")
     print("then your chances of survival are slim.\n")
     # time.sleep(3)
     print("In all the H. H Holmes books you've read, ")
@@ -319,7 +321,8 @@ def room_four_choice_four():
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")  
 
-# def room_five_a():
+def room_five_a():
+    global vial
 
     print("You walk down the set of stairs and into what looks like a chemistry lab.\n")
     # time.sleep(3)
@@ -332,10 +335,7 @@ def room_four_choice_four():
     print("1. Yes.")
     print("2. No.")
 
-    while True:
-
-        global vial
-        
+    while True:      
         answer = input("> ")
         if answer == "1":
             vial = True
@@ -355,10 +355,48 @@ def room_four_choice_four():
     print("Feeling each door, you finally happen upon one that pushes open.\n")
     # time.sleep(3)
 
+    if rest == True:
+        print("Thanks to the moment of rest from earlier, you're alert enough to spot a contraption behind the door")
+        print("and dart out of the way just in time.\n")
+        # time.sleep(3)
+        print("A set of spears pierce the opposite wall in the hallway, and you quietly thank the armchair for its assistance.\n")
+    else:
+        print("As much as you try to beware of any dangers, your tired state from this whole ordeal has taken a toll on your body and mind, ")
+        print("and you're a second too late to discover the contraption on the other side of the door.\n")
+        # time.sleep(3)
+        print("You swing aside, but not fast enough,")
+        print("and one of the spears shot from the machine slice the side of your leg.\n")
+        # time.sleep(3)
+        print("Hobbling, you catch yourself on the wall to assess the damage, concluding it's unlikely to be lethal, ")
+        print("but cripples your speed.\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        print("\n")
+        print("\n")
+        print("\n")
+        print("\n")
+
+
+
 
 def game_over():
     print("Game over")
-    intro()
+    # intro()
 
 
 intro()
