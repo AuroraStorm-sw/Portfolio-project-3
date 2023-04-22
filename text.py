@@ -129,7 +129,7 @@ def room_four_choice_three():
     print("With sweat beading on your forehead, you throw the door open and jump aside ")
     print("just in time for a rain of arrows to fly past.")
     # time.sleep(3)
-    print("Shaking, tired, and weary, you safely make it through the door and down a slim flight of stairs.")
+    print("Shaking, you safely make it through the door and down a slim flight of stairs.")
 
 
 def room_four_choice_four_text():
@@ -218,3 +218,116 @@ def room_six_a_choice_three():
     print("from his wretched deed, and the last thing you see is ")
     print("your favorite true crime murderer swing a blade at your throat.")
     print("Your death is slow as you bleed out on the floor.")
+
+# """"""""""""""
+# " ROOM SEVEN "
+# """"""""""""""
+
+# if not injury and weapon == screwdriver
+def room_seven_ending_1():
+    print("You bolt towards the exit and pull the door, but it's padlocked.\n")
+    print("As Holmes slowly approaches, you pull the screwdriver out into the lock.\n")
+    print("With all your might and adrenaline, you snap the padlock open ")
+    print("and run as fast as your legs can carry you across the courtyard.\n")
+    print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+    win_game()
+    print("ending 1")# TEST = FUNCTIONAL
+
+def room_seven_ending_2():
+    print("High on adrenaline, you launch yourself at Holmes with enough strength that he stumbles backward,")
+    print("giving you a perfect option to strike him with the screwdriver.\n")
+    print("The sound of the tool hitting his temple makes you nauseous,")
+    print(" and you stare in shock as his body goes limp and falls to the ground.\n")
+    print('"I\'m never reading another book about you," you conclude in adrenaline-induced confusion ')
+    print("and don't bother checking his body; instead, you rush to the door.\n")
+    print("Finding the door locked, you use your might and adrenaline to snap the padlock open ")
+    print("and run as fast as your legs can carry you across the courtyard.\n")
+    print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+    win_game()
+    print("ending 2")# TEST = FUNCTIONAL
+
+# if not injury and weapon == vial
+
+def room_seven_ending_3():
+    print("You bolt towards the exit and pull the door, but it's padlocked.\n")
+    print("As Holmes slowly approaches, you pull the vial out and smash it against the padlock ")
+    print("with a prayer that it's filled with something useful.\n")
+    print("At last, something goes your way, and the padlock erodes before your eyes.")
+    print("The second it falls off, you push the door open and run as fast as your legs can carry you across the courtyard.\n")
+    print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+    win_game()
+    print("ending 3") # TEST = FUNCTIONAL
+
+def room_seven_ending_4():
+    print("High on adrenaline, you launch yourself at Holmes with enough strength that he stumbles backward,")
+    print("giving you a perfect option to strike him with the vial.\n")
+    print("With nothing to lose, you pop the cap open and throw the content at Holmes' face,")
+    print(" and you stare in terror as he clutches his face with a horrifying scream, collapsing.\n")
+    print('"I\'m never reading another book about you," you conclude in adrenaline-induced confusion ')
+    print("and don't bother checking his body; instead, you rush to the door.\n")
+    print("Finding the door locked, you use what few drops are left in the vial and pour it on the padlock, ")
+    print("which erodes before your eyes.\n")
+    print("The second it falls off, you push the door open and run as fast as your legs can carry you across the courtyard.\n")
+    print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+    win_game()
+    print("ending 4") # TEST = FUNCTIONAL
+
+# if injury and weapon == screwdriver
+def room_seven_ending_5():
+    print("You limp towards the exit and pull the door, but it's padlocked.\n")
+    print("With all your might and adrenaline, you use the screwdriver to snap the padlock open ")
+    print("and rush out the open door.\n")
+    print("As pain rips through your leg, you force every ounce of energy into running, ")
+    print("wanting nothing but to escape this horrible place.\n")
+    print("Never looking back, you run until you find a dock and a small boat and stumble onto it.\n")
+    win_game()
+    print("ending 5") # TEST = FUNCTIONAL
+
+def room_seven_ending_6():
+    print("High on adrenaline, you launch yourself at Holmes, ")
+    print("but the injury steals so much energy that you don't have enough to get a final blow.\n")
+    print("The screwdriver is torn from your hand, and you choke suddenly ")
+    print("as Holmes strikes it back through your throat.\n")
+    print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+    game_over()
+    print("ending 6") # TEST = FUNCTIONAL
+
+# if injury and weapon == vial
+def room_seven_ending_7():
+    print("You limp towards the exit and pull the door, but it's padlocked.\n")
+    print("You use what's left of the vial, and the padlock erodes before your eyes.\n")
+    print("The second it falls off, you push the door open.\n")
+    print("As pain rips through your leg, you force every ounce of energy into running, ")
+    print("wanting nothing but to escape this horrible place.\n")
+    print("Never looking back, you run until you find a dock and a small boat and stumble onto it.\n")
+    win_game()
+    print("ending 7")
+
+def room_seven_ending_8():
+    print("High on adrenaline, you launch yourself at Holmes, ")
+    print("but the injury steals so much energy that you don't have enough to get a final blow.\n")
+    print("The screwdriver is torn from your hand, and you choke suddenly as ")
+    print("Holmes strikes a cold, metal object through your throat.\n")
+    print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+    game_over()
+    print("ending 8")
+
+# if injury and not weapon
+def room_seven_ending_9():
+    print("You limp towards the exit, but the injury holds you back, ")
+    print("and you don't reach the door before you're caught.\n")
+    print("With nothing to defend yourself, all you can do is watch in horror as something shiny flashes by, ")
+    print("and you choke suddenly as Holmes strikes a cold, metal object through your throat.\n")
+    print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+    game_over()
+    print("ending 9")
+
+def room_seven_ending_10():
+    print("High on adrenaline, you launch yourself at Holmes.\n")
+    print("Flailing your arms and manages a few strikes, but your injuries hold you back, ")
+    print("and as you swing your arm it's caught in Holmes' grip.\n")
+    print("There's a flash of something shiny, and you choke suddenly, ")
+    print("as Holmes strikes a cold, metal object through your throat.\n")
+    print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+    game_over() 
+    print("ending 10")
