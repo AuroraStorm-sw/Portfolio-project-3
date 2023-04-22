@@ -4,12 +4,13 @@
 """
 Imports
 """
+import text
 import time
 
 """
 Variables
 """
-
+weapon = None
 vial = False
 screwdriver = False
 rest = False
@@ -22,6 +23,7 @@ with a general idea of what the game is about
 
 
 def intro():
+    # text.intro_text()
     print("\nYou've read stories about people reading a book and waking up ")
     print("in a new world set within the pages of their favorite novel.\n")
     # time.sleep(4)
@@ -43,8 +45,9 @@ def intro():
             # time.sleep(3)
             room_one()
             break
-        elif answer == "2":
+        if answer == "2":
             room_four()
+            break
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
@@ -59,6 +62,7 @@ The player will then be given the option to restart it.
 
 
 def room_one():
+    # text.room_one_text()
 
     print("Your sleep is sound and undisturbed until you stir from an odd smell.\n")
     # time.sleep(4)
@@ -73,24 +77,22 @@ def room_one():
     print("\nWhat do you do?\n")
 
     print("1. Feel the walls; there must be something to stop this!")
-    print("2. Pinch your arm, certain you must be dreaming, and this will all pass. Right?")
+    print("2. Pinch your arm, certain you must be dreaming, and this will all pass. Right?\n")
 
     while True:
         answer = input("> ")
         if answer == "1":
             print("\nYou frantically search the walls and stumble upon an odd tile. \n")
             # time.sleep(3)
-            print(
-                "Pushing it, the hissing stops and a slit in the wall reveals itself.\n")
+            print("Pushing it, the hissing stops and a slit in the wall reveals itself.\n")
             # time.sleep(3)
-            print(
-                "You throw yourself out of the space and land on a plush red carpet, coughing and wheezing.\n")
+            print("You throw yourself out of the space and land on a plush red carpet, coughing and wheezing.\n")
             # time.sleep(3)
             room_two()
             break
         elif answer == "2":
             print("\nIt's not a dream, you slowly realize as the gas fills your lungs further, and you slip off into sleep, never waking up again.")
-            # game_over()
+            game_over()
             break
         else:
             print("Incorrect value")
@@ -106,6 +108,8 @@ The player will then be given the option to restart it.
 
 
 def room_two():
+    # text.room_two_text()
+
     print("Looking around, you're in the middle of a long hallway, both ends leading to different directions.\n")
     # time.sleep(3)
     print("After finding your breath, you get up on your feet, quite sure this isn't a dream anymore.\n")
@@ -132,7 +136,7 @@ def room_two():
             print('"Weird, but there\'s something for everyone," you conclude, and just as you are about to step away, the armor rustles.\n')
             # time.sleep(3)
             print("Before you get the chance to react, the sword comes down, its shiny blade the last thing you see.\n")
-            # game_over()
+            game_over()
             break
         elif answer == "2":
             print("\nYou approach the portrait of a proud-looking man with a bushy mustache and a bowler hat, staring at nothingness with empty eyes.\n")
@@ -158,6 +162,8 @@ The player will then be given the option to restart it.
 
 
 def room_three():
+    # text.room_three_text()
+
     print("The corridor turns and twists.\n")
     # time.sleep(3)
     print("Walls, and floors in similar red shades making the narrow hallways disorienting even though there's only one way.\n")
@@ -171,12 +177,11 @@ def room_three():
 
     print("1. Jump backwards.")
     print("2. Jump forward.")
-
+    print("3. Stand still.")
     while True:
         answer = input("> ")
         if answer == "1":
-            print(
-                "\nYou leap further down the corridor and miss the trapdoor by barely a centimeter.\n")
+            print("\nYou leap further down the corridor and miss the trapdoor by barely a centimeter.\n")
             # time.sleep(3)
             print("Peering over the edge, the now open space drops into a maw of spikes, ready to impale anyone unfortunate enough to miss their chance.\n")
             # time.sleep(3)
@@ -187,13 +192,20 @@ def room_three():
         elif answer == "2":
             print("\nYou throw yourself towards the dead end.\n")
             # time.sleep(3)
-            print(
-                "But as you step into safety away from the trapdoor, the floor opens up further.\n")
+            print("But as you step into safety away from the trapdoor, the floor opens up further.\n")
             # time.sleep(3)
             print("Your fingers grace the edge of the trapdoor before you fall into a maw of spikes and the floor closes above you.\n")
             # time.sleep(3)
             print("Your death is slow and painful.\n")
-            # game_over
+            game_over()
+            break
+        elif answer == "3":
+            print("\nReally?\n")
+            print("You must've guessed this was comming, ")
+            print("as you helplessly fall into a pit of spikes.\n")
+            print("Perhaps it's better this way.\n")
+            print("Your death is slow and painful.")
+            game_over()
             break
         else:
             print("Incorrect value")
@@ -211,6 +223,8 @@ One option will add a bonus in a later game area.
 
 
 def room_four():
+    #text.room_four_text()
+
     print('"This reminds me of the Murder Castle," you think as you cautiously move down a curved flight of stairs, ')
     print("each step soft and careful as you tread each step.\n")
     # time.sleep(3)
@@ -224,19 +238,46 @@ def room_four():
 
     print("1. Take the door to the left.")
     print("2. Take the door to the right.")
-    print("3. Take the door ahead")
-    print("4. Sit and rest to catch your breath")
+    print("3. Take the door ahead.")
+    print("4. Sit and rest to catch your breath.")
 
     while True:
         answer = input("> ")
         if answer == "1":
-            room_four_choice_one()
+            # text.room_four_choice_one()
+            print("\nYou approach the door to the left and slowly open it, only to meet a brick wall.\n")
+            # time.sleep(3)
+            print('"Great," you sigh, and as you turn to leave it, you hear a weird scraping sound.\n')
+            # time.sleep(3)
+            print('Turn around in time to face a spear edge shooting out from the wall.\n')
+            # time.sleep(3)
+            print("Your death is quick.")
+            game_over()
             break
         elif answer == "2":
-            room_four_choice_two()
+            # text.room_four_choice_two()
+            print("\nYou approach the door to the right and peek through the keyhole.\n")
+            # time.sleep(3)
+            print("There's light coming in from somewhere inside the room, and you slowly open it, ")
+            print("entering a smaller reception room with another set of stairs.\n")
+            # time.sleep(3)
+            print("A barred window faces a courtyard, and you swallow at the sight of ")
+            print("the courtyard leading to nothing but water.\n")
+            print("All you can see is sea or ocean, as if you're stranded on an island, and hope falls.\n")
+            print("No, you have to get out.")
+            print("Someone brought you inside, and you will be able to find out how.\n")
+            print("Tired and weary, you must push forward!\n\n")
+            room_five_a()
             break
         elif answer == "3":
-            room_four_choice_three()
+            # text.room_four_choice_three()
+            print("\nYou approach the door ahead, and as you turn the handle, an uncanny 'click' reach your ears.\n")
+            # time.sleep(3)
+            print("With sweat beading on your forehead, you throw the door open and jump aside ")
+            print("just in time for a rain of arrows to fly past.")
+            # time.sleep(3)
+            print("Shaking, tired, and weary, you safely make it through the door and down a slim flight of stairs.")
+            room_six_a()
             break
         elif answer == "4":
             room_four_choice_four()
@@ -245,48 +286,9 @@ def room_four():
             print("Please, enter a number corresponding with your choice")
 
 
-def room_four_choice_one():
-    print("\nYou approach the door to the left and slowly open it, only to meet a brick wall.\n")
-            # time.sleep(3)
-    print('"Great," you sigh, and as you turn to leave it, you hear a weird scraping sound.\n')
-            # time.sleep(3)
-    print('Turn around in time to face a spear edge shooting out from the wall.\n')
-            # time.sleep(3)
-    print("Your death is quick.")
-
-    game_over()
-
-
-def room_four_choice_two():
-    print("\nYou approach the door to the right and peek through the keyhole.\n")
-    # time.sleep(3)
-    print("There's light coming in from somewhere inside the room, and you slowly open it, ")
-    print("entering a smaller reception room with another set of stairs.\n")
-    # time.sleep(3)
-    print("A barred window faces a courtyard, and you swallow at the sight of ")
-    print("the courtyard leading to nothing but water.\n")
-    print("All you can see is sea or ocean, as if you're stranded on an island, and hope falls.\n")
-    print("No, you have to get out.")
-    print("Someone brought you inside, and you will be able to find out how.\n")
-    print("Tired and weary, you must push forward!")
-
-    room_five_a()
-
-
-def room_four_choice_three():
-    print("\nYou approach the door ahead, and as you turn the handle, an uncanny 'click' reach your ears.\n")
-    # time.sleep(3)
-    print("With sweat beading on your forehead, you throw the door open and jump aside ")
-    print("just in time for a rain of arrows to fly past.")
-    # time.sleep(3)
-    print("Shaking, tired, and weary, you safely make it through the door and down a slim flight of stairs.")
-
-    room_five_b()
-
-
 def room_four_choice_four():
-
     global rest
+    # text.room_four_choice_four_text()
 
     print("\nHeart racing and head swimming, you decide to sit down in one of the plush armchairs to catch your breath and sense.\n")
     # time.sleep(3)
@@ -304,29 +306,59 @@ def room_four_choice_four():
 
     print("1. Take the door to the left.")
     print("2. Take the door to the right.")
-    print("3. Take the door ahead\n")
+    print("3. Take the door ahead.\n")
 
     while True:
         answer = input("> ")
         if answer == "1":
-            room_four_choice_one()
+            # text.room_four_choice_one()
+            print("\nYou approach the door to the left and slowly open it, only to meet a brick wall.\n")
+            # time.sleep(3)
+            print('"Great," you sigh, and as you turn to leave it, you hear a weird scraping sound.\n')
+            # time.sleep(3)
+            print('Turn around in time to face a spear edge shooting out from the wall.\n')
+            # time.sleep(3)
+            print("Your death is quick.")
+            game_over()
             break
         elif answer == "2":
-            room_four_choice_two()
+            # text.room_four_choice_two()
+            print("\nYou approach the door to the right and peek through the keyhole.\n")
+            # time.sleep(3)
+            print("There's light coming in from somewhere inside the room, and you slowly open it, ")
+            print("entering a smaller reception room with another set of stairs.\n")
+            # time.sleep(3)
+            print("A barred window faces a courtyard, and you swallow at the sight of ")
+            print("the courtyard leading to nothing but water.\n")
+            print("All you can see is sea or ocean, as if you're stranded on an island, and hope falls.\n")
+            print("No, you have to get out.")
+            print("Someone brought you inside, and you will be able to find out how.\n")
+            print("Tired and weary, you must push forward!")
+            room_five_a()
             break
         elif answer == "3":
-            room_four_choice_three()
+            # text.room_four_choice_three()
+            print("\nYou approach the door ahead, and as you turn the handle, an uncanny 'click' reach your ears.\n")
+            # time.sleep(3)
+            print("With sweat beading on your forehead, you throw the door open and jump aside ")
+            print("just in time for a rain of arrows to fly past.")
+            # time.sleep(3)
+            print("Shaking, tired, and weary, you safely make it through the door and down a slim flight of stairs.")
+            room_six_a()
             break
         else:
             print("Incorrect value")
-            print("Please, enter a number corresponding with your choice")  
+            print("Please, enter a number corresponding with your choice")
+
 
 def room_five_a():
+    global weapon
     global vial
+    # text.room_five_a_text()
 
     print("You walk down the set of stairs and into what looks like a chemistry lab.\n")
     # time.sleep(3)
-    print("dimly lit with tables cluttered with needles, vials, jars, and all sorts of instruments.\n")
+    print("Dimly lit with tables cluttered with needles, vials, jars, and all sorts of instruments.\n")
     # time.sleep(3)
     print("There aren't any ongoing experiments, though as you carefully rummage through the room, you spot a vial with a toxic-looking, greenish content, and a warning label. It looks fragile, and there's some corrosion on the cap.\n")
     # time.sleep(3)
@@ -335,19 +367,22 @@ def room_five_a():
     print("1. Yes.")
     print("2. No.")
 
-    while True:      
+    while True:
         answer = input("> ")
         if answer == "1":
             vial = True
+            weapon = vial
             print("\nYou gently pick the vial off the counter and study it, quickly realizing it could contain absolutely anything.\n")
             print(
                 '"Anything\'s better than nothing," you conclude and move on through the lab.')
             break
-        elif answer == "2":
+        if answer == "2":
             print("\nCertain it will backfire in some horrible way, you leave the vial alone, and move on through the lab.")
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
+
+    # text.room_five_a1_text()
 
     print("\nLeaving the lab, you wander through more endless corridors shifting around you as you proceed,")
     print("so much that you might be walking in circles and you wouldn't know.\n")
@@ -355,11 +390,11 @@ def room_five_a():
     print("Feeling each door, you finally happen upon one that pushes open.\n")
     # time.sleep(3)
 
-    if rest == True:
+    if rest:
         print("Thanks to the moment of rest from earlier, you're alert enough to spot a contraption behind the door")
         print("and dart out of the way just in time.\n")
         # time.sleep(3)
-        print("A set of spears pierce the opposite wall in the hallway, and you quietly thank the armchair for its assistance.\n")
+        print("A set of spears pierce the opposite wall in the hallway, and you quietly thank the armchair for its assistance.\n\n")
     else:
         print("As much as you try to beware of any dangers, your tired state from this whole ordeal has taken a toll on your body and mind, ")
         print("and you're a second too late to discover the contraption on the other side of the door.\n")
@@ -368,30 +403,245 @@ def room_five_a():
         print("and one of the spears shot from the machine slice the side of your leg.\n")
         # time.sleep(3)
         print("Hobbling, you catch yourself on the wall to assess the damage, concluding it's unlikely to be lethal, ")
-        print("but cripples your speed.\n")
+        print("but cripples your speed.\n\n")
+
+    room_six_b()
 
 
+def room_six_a():
+    # text.room_five_b_text()
+
+    print("Down the stairs, you find yourself in another corridor snaking left to right.\n")
+    print("Knowing that death might come around any corner, you move slowly - ")
+    print("too slowly for some, as the corridor rattles and a wall appears behind you.\n")
+    print("You try not to panic, but when the wall moves towards you, you can only run.\n")
+    print("As you rush down the corridor, you feel every door you pass is locked.\n")
+    print("As you feel one and move away, you hear the door click, and feeling it again, ")
+    print("it swings open.\n")
+
+    print("What do you do?\n")
+
+    print("1. Run down the hall.\n")
+    print("2. Enter the room.\n")
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            print("You sprint down the hall, certain another escape is near, and find yourself in front of a massive window.\n")
+            print("Below, a boat is rocking on the gentle waves near the shore,")
+            print(
+                "filling you with a burst of hope that there is a way to leave this nightmarish place.\n")
+            print("However, as you bang on the window, the wall keeps coming,")
+            print("and your one shot at freedom is the last thing you see.\n")
+            game_over()
+        elif answer == "2":
+            room_five_b_progress()
+        else:
+            print("Incorrect value")
+            print("Please, enter a number corresponding with your choice")
 
 
+def room_five_b_progress():
+    global weapon
+    global screwdriver
+
+    print("You rush inside the room just as the door closes and locks behind you.\n")
+    print('"Typical," you mutter, but at least you have a few more minutes to your life.\n')
+    print("The room is long and narrow with wide floor tiles, ")
+    print("and something about the tiles makes you uneasy\n")
+
+    if rest:
+        print("With a clearer head, thanks to the moment of rest, you spot the difference between the tiles before you, ")
+        print("some with the slightest height difference.\n")
+        print("With this in mind,")
+        print("you make a safe journey across the room and exit the door on the other side.\n")
+    else:
+        print("As much as you try and spot any difference between the tiles,")
+        print("your tired state from this whole ordeal has taken a toll on your body and mind, ")
+        print("and you test one of the tiles with your toes.\n")
+        print("Instantly, fire erupts from the wall, briefly engulfing your leg.\n")
+        print("You tumble backward and pat the flames out, cursing your crippled state.\n")
+        print("With all the focus you can muster, you finally spot a slight height difference in the tiles \n")
+        print("and manages a safe, albeit painful, journey across the room toward the door.\n")
+        print("Just as you leave, you spot something shining underneath a small cabinet.")
+
+        print("Do you take it?\n")
+        print("1. Yes.")
+        print("2. No.")
+        while True:
+            answer = input("> ")
+            if answer == "1":
+                screwdriver = True
+                weapon = screwdriver
+                print("Carefully, you ease the object out - it's a screwdriver.\n")
+                print("Handy.\n")
+                print("You pocket it and hurry the opposite way of the two figures, ")
+                print("with blood-curdling screams haunting your back.")
+                break
+            elif answer == "2":
+                print("Certain it's another trick to put you in harm's way, you leave the object ")
+                print("and hurry the opposite way of the two figures with blood-curdling screams haunting your back.")
+                break
+            else:
+                print("Incorrect value")
+                print("Please, enter a number corresponding with your choice")
+
+    room_six_b()
 
 
+def room_six_b():
+
+    print("\nPushing forward, your main destination is downward, as there must be a door somewhere to leave this horrendous place, ")
+    print("but as you tread down the hallway, you hear footsteps coming your way.\n")
+    print("What do you do?\n")
+
+    print("1. Go back.")
+    print("2. Hide behind a cabinet")
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            # text.room_six_a_choice_one()
+            print("You spin on your heels and bolt the other way, only to slam against a wall where there was a door moments ago.\n")
+            print("Panicking, you turn to run back again but are stopped in your tracks as a figure rushes your way.")
+            print('"Another civilian?" you assume, but you don\'t get the time to ask as following them is another figure - ')
+            print("one dressed in black wearing a bowler hat.\n")
+            print("You ease up against the wall without escape and yelp in surprise when the floor disappears beneath your feet.\n")
+            print("At least you didn't leave the world alone.\n")
+
+            game_over()
+        elif answer == "2":
+            # text.room_six_a_choice_two()
+            print("You hurry behind the old-timey piece of furniture and hold your breath as the footsteps come closer.\n")
+            print("The pace is quick as if they're running, and you stare in shock ")
+            print("as another civilian dashes past you toward the lab.\n")
+            print('"I\'m not alone," you conclude and hold back from following the person as another set of footsteps follow.\n')
+            print("Slow, deliberate.\n")
+            print("Step, step, tack...\n")
+            print("Step, step, tack...\n")
+            print("Still as a statue, you watch a darkly dressed figure stride past, cane in hand and bowler hat on their head.\n")
+            print("Same as the portrait. \n")
+            print("Only when they've both disappeared do you dare move.")
+            break
+        else:
+            print("Incorrect value")
+            print("Please, enter a number corresponding with your choice")
+
+    room_seven()
 
 
+def room_seven():
+    print("Finally, you make it to the bottom floor and, even better, the front door!\n")
+    print("Eager to escape this nightmare, you hurry across the room, ")
+    print("only to freeze when footsteps echo behind you.\n")
+    print("Step, step, tack...\n")
+    print("Step, step, tack...\n")
+    print("Spinning around, you spot the man of your favorite true crime stories ")
+    print("walking in your direction, and you look around for options.\n")
+    print("Only two come to mind.\n")
+
+    print("What do you do?\n")
+
+    print("1. Run for the exit.")
+    print("2. Attack H. H Holmes\n")
+
+    if not injury and weapon == screwdriver:
+        answer = input("> ")
+        if answer == "1":
+            print("You bold towards the exit and pull the door, but it's padlocked.\n")
+            print("As Holmes slowly approaches, you pull the screwdriver out into the lock.\n")
+            print("With all your might and adrenaline, you snap the padlock open ")
+            print("and run as fast as your legs can carry you across the courtyard.\n")
+            print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+            game_win()
+        if answer == "2": 
+            print("High on adrenaline, you launch yourself at Holmes with enough strength that he stumbles backward,")
+            print("giving you a perfect option to strike him with the screwdriver.\n")
+            print("The sound of the tool hitting his temple makes you nauseous,")
+            print(" and you stare in shock as his body goes limp and falls to the ground.\n")
+            print('"I\'m never reading another book about you," you conclude in adrenaline-induced confusion ')
+            print("and don't bother checking his body; instead, you rush to the door.\n")
+            print("Finding the door locked, you use your might and adrenaline to snap the padlock open ")
+            print("and run as fast as your legs can carry you across the courtyard.\n")
+            print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+            game_win()
+
+    if not injury and weapon == vial:
+        answer = input("> ")
+        if answer == "1":
+            print("You bold towards the exit and pull the door, but it's padlocked.\n")
+            print("As Holmes slowly approaches, you pull the vial out and smash it against the padlock ")
+            print("with a prayer that it's filled with something useful.\n")
+            print("At last, something goes your way, and the padlock erodes before your eyes.")
+            print("The second it falls off, you push the door open and run as fast as your legs can carry you across the courtyard.\n")
+            print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+            game_win()
+        if answer == "2": 
+            print("High on adrenaline, you launch yourself at Holmes with enough strength that he stumbles backward,")
+            print("giving you a perfect option to strike him with the vial.\n")
+            print("With nothing to lose, you pop the cap open and throw the content at Holmes' face,")
+            print(" and you stare in terror as he clutches his face with a horrifying scream, collapsing.\n")
+            print('"I\'m never reading another book about you," you conclude in adrenaline-induced confusion ')
+            print("and don't bother checking his body; instead, you rush to the door.\n")
+            print("Finding the door locked, you use what few drops are left in the vial and pour it on the padlock, ")
+            print("which erodes before your eyes.\n")
+            print("The second it falls off, you push the door open and run as fast as your legs can carry you across the courtyard.\n")
+            print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+            game_win()
+
+    if injury and weapon:
+        print("You limp towards the exit, but the injury holds you back, and you don't reach the door before you're caught\n")
+        print("Pulling the screwdriver, you make one final attempt at your freedom and swing it at Holmes, ")
+        print("striking his neck with all the force you can muster.\n")
+        print("You watch in terror as the man recoils. \n")
+        print('"Now is my chance."\n')
+
+        print("What do you do?\n")
+
+        print("1. Continue running for the exit.")
+        print("2. Attack H. H Holmes again\n")
+
+        answer = input("> ")
+        if answer == "1":
+            print("You limp towards the exit and pull the door, but it's padlocked.\n")
+            print("With all your might and adrenaline, you use the screwdriver to snap the padlock open ")
+            print("and rush out the open door.\n")
+            print("As pain rips through your leg, you force every ounce of energy into running, ")
+            print("wanting nothing but to escape this horrible place.\n")
+            print("Never looking back, you run until you find a dock and a small boat and stumble onto it.\n")
+            game_win()
+        if answer == "2":
+            print("High on adrenaline, you launch yourself at Holmes, ")
+            print("but the injury steals so much energy that you don't have enough to get a final blow.\n")
+            print("The screwdriver is torn from your hand, and you choke suddenly ")
+            print("as Holmes strikes it back through your throat.\n")
+            print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+            game_over()
+
+    if injury and not weapon:
+        answer = input("> ")
+        if answer == "1":
+            print("You limp towards the exit, but the injury holds you back, ")
+            print("and you don't reach the door before you're caught.\n")
+            print("With nothing to defend yourself, all you can do is watch in horror as something shiny flashes by, ")
+            print("and you choke suddenly as Holmes strikes a cold, metal object through your throat.\n")
+            print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+            game_over() 
+        if answer == "2":
+            print("High on adrenaline, you launch yourself at Holmes.\n")
+            print("Flailing your arms and manages a few strikes, but your injuries hold you back, ")
+            print("and as you swing your arm it's caught in Holmes' grip.\n")
+            print("There's a flash of something shiny, and you choke suddenly, ")
+            print("as Holmes strikes a cold, metal object through your throat.\n")
+            print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+            game_over() 
 
 
-
-
-
-
-
-        
-        
-        print("\n")
-        print("\n")
-        print("\n")
-        print("\n")
-
-
+def win_game():
+    print("With lady luck on your side, you tug the rope to the motor, and it whirs alive.\n")
+    print("ith no idea where you are, any place is better than here, so you set off across the water, ")
+    print("certain that any destination is better than the Murder Castle.\n")
+    print("And that you'll never read another true crime story.")
 
 
 def game_over():
