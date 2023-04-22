@@ -12,10 +12,9 @@ Variables
 """
 weapon = None
 attack = None
-vial = False
-screwdriver = False
 rest = False
 injury = False
+ending = None
 
 """
 Introduction to the game to get the player started
@@ -136,7 +135,7 @@ def room_two():
             # time.sleep(3)
             print('"Weird, but there\'s something for everyone," you conclude, and just as you are about to step away, the armor rustles.\n')
             # time.sleep(3)
-            print("Before you get the chance to react, the sword comes down, its shiny blade the last thing you see.\n")
+            print("Before you get the chance to react, the sword comes down, its sharp blade the last thing you see.\n")
             game_over()
             break
         elif answer == "2":
@@ -308,31 +307,34 @@ def room_four_choice_four():
 def room_five_a():
     global injury
     global weapon
-    global vial
+    global attack
+    weapon = "vial"
+    attack = "splash"
     # text.room_five_a_text()
 
     print("You walk down the set of stairs and into what looks like a chemistry lab.\n")
     # time.sleep(3)
     print("Dimly lit with tables cluttered with needles, vials, jars, and all sorts of instruments.\n")
     # time.sleep(3)
-    print("There aren't any ongoing experiments, though as you carefully rummage through the room, you spot a vial with a toxic-looking, greenish content, and a warning label. It looks fragile, and there's some corrosion on the cap.\n")
+    print("There aren't any ongoing experiments, though as you carefully rummage through the room," ) 
+    print(f"you spot a {weapon} with a toxic-looking, greenish content, and a warning label.")
+    print("\nIt looks fragile, and there's some corrosion on the cap.\n")
     # time.sleep(3)
 
-    print("\nDo you take the vial?\n")
+    print(f"\nDo you take the {weapon}?\n")
     print("1. Yes.")
     print("2. No.")
 
     while True:
         answer = input("> ")
         if answer == "1":
-            vial = True
-            weapon = vial
             print(f"\nYou gently pick the {weapon} off the counter and study it, quickly realizing it could contain absolutely anything.\n")
             print(
                 '"Anything\'s better than nothing," you conclude and move on through the lab.')
             break
         if answer == "2":
             print(f"\nCertain it will backfire in some horrible way, you leave the {weapon} alone, and move on through the lab.")
+            break
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
@@ -377,7 +379,7 @@ def room_six_a():
 
     print("What do you do?\n")
 
-    print("1. Run down the hall.\n")
+    print("1. Run down the hall.")
     print("2. Enter the room.\n")
 
     while True:
@@ -400,7 +402,9 @@ def room_six_a():
 def room_five_b_progress():
     global injury
     global weapon
-    global screwdriver
+    global attack
+    weapon = "screwdriver"
+    attack = "stab"
 
     print("You rush inside the room just as the door closes and locks behind you.\n")
     print('"Typical," you mutter, but at least you have a few more minutes to your life.\n')
@@ -429,9 +433,7 @@ def room_five_b_progress():
     while True:
         answer = input("> ")
         if answer == "1":
-            screwdriver = True
-            weapon = screwdriver
-            print("Carefully, you ease the object out - it's a screwdriver.\n")
+            print(f"Carefully, you ease the object out - it's a {weapon}.\n")
             print("Handy.\n")
             print("You pocket it and hurry the opposite way of the two figures, ")
             print("with blood-curdling screams haunting your back.")
@@ -466,7 +468,7 @@ def room_six_b():
             print("one dressed in black wearing a bowler hat.\n")
             print("You ease up against the wall without escape and yelp in surprise when the floor disappears beneath your feet.\n")
             print("At least you didn't leave the world alone.\n")
-
+            break
             game_over()
         elif answer == "2":
             # text.room_six_a_choice_two()
@@ -484,77 +486,60 @@ def room_six_b():
         else:
             print("Incorrect value")
             print("Please, enter a number corresponding with your choice")
-
-    if not injury:
-        room_seven_no_injury()
-    else: 
-        room_seven_injury()
+    room_seven()
 
 
-def room_seven_no_injury():
-    print("Finally, you make it to the bottom floor and, even better, the front door!\n")
-    print("Eager to escape this nightmare, you hurry across the room, ")
-    print("only to freeze when footsteps echo behind you.\n")
-    print("Step, step, tack...\n")
-    print("Step, step, tack...\n")
-    print("Spinning around, you spot the man of your favorite true crime stories ")
-    print("walking in your direction, and you look around for options.\n")
-    print("Only two come to mind.\n")
+def room_seven():
+    global ending
 
-    print("What do you do?\n")
-
-    print("1. Run for the exit.")
-    print("2. Attack H. H Holmes\n")
-
-    if not injury and weapon == screwdriver:
-        while True:
-            answer = input("> ")
-            if answer == "1": 
-                text.room_seven_ending_1()
-            elif answer == "2": 
-                text.room_seven_ending_2()
-            else:
-                print("Incorrect value")
-                print("Please, enter a number corresponding with your choice")
-
-    if not injury and weapon == vial:
-        while True:
-            answer = input("> ")
-            if answer == "1": 
-                text.room_seven_ending_3()
-            elif answer == "2": 
-                text.room_seven_ending_4()
-            else:
-                print("Incorrect value")
-                print("Please, enter a number corresponding with your choice")
-
-def room_seven_injury():
-    if injury and weapon == screwdriver:
-        print("You limp towards the exit, but the injury holds you back, and you don't reach the door before you're caught\n")
-        print("Pulling the screwdriver, you make one final attempt at your freedom and swing it at Holmes, ")
-        print("striking his neck with all the force you can muster.\n")
-        print("You watch in terror as the man recoils. \n")
-        print('"Now is my chance."\n')
+    if not injury and weapon:
+        print("Finally, you make it to the bottom floor and, even better, the front door!\n")
+        print("Eager to escape this nightmare, you hurry across the room, ")
+        print("only to freeze when footsteps echo behind you.\n")
+        print("Step, step, tack...\n")
+        print("Step, step, tack...\n")
+        print("Spinning around, you spot the man of your favorite true crime stories ")
+        print("walking in your direction, and you look around for options.\n")
+        print("Only two come to mind.\n")
 
         print("What do you do?\n")
 
-        print("1. Continue running for the exit.")
-        print("2. Attack H. H Holmes again\n")
-
+        print("1. Run for the exit.")
+        print("2. Attack H. H Holmes\n")
         while True:
             answer = input("> ")
             if answer == "1": 
-                text.room_seven_ending_5()
+                # text.room_seven_ending_1()
+                print("You bolt towards the exit and pull the door, but it's padlocked.\n")
+                print(f"As Holmes slowly approaches, you pull the {weapon} and {attack} it.\n")
+                print("With luck on your side for once, you get the door open, ")
+                print("and run as fast as your legs can carry you across the courtyard.\n")
+                print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+                ending = "1"
+                win_game()
+                break        
             elif answer == "2": 
-                text.room_seven_ending_6()
+                # text.room_seven_ending_2()
+                print("High on adrenaline, you launch yourself at Holmes with enough strength that he stumbles backward,")
+                print(f"giving you a perfect option to strike him with the {weapon}.")
+                print(f"The sound of his screams makes you nauseous as you {attack} him")
+                print("until it's too much for him to bare, and he collapses onto the floor.\n")
+                print('"I\'m never reading another book about you," you conclude in adrenaline-induced confusion ')
+                print("and don't bother checking his body; instead, you rush to the door.\n")
+                print("Finding the door locked, you use your might and adrenaline to snap the padlock open ")
+                print("and run as fast as your legs can carry you across the courtyard.\n")
+                print("Never looking back, you run until you find a dock and a small boat and leap onto it.\n")
+                ending = "2"
+                win_game()
+                break
             else:
                 print("Incorrect value")
                 print("Please, enter a number corresponding with your choice")
 
 
-    if injury and weapon == vial:
+    if injury and weapon:
         print("You limp towards the exit, but the injury holds you back, and you don't reach the door before you're caught\n")
-        print("Pulling out the vial, you make one final attempt at your freedom and splash the content at Holmes, ")
+        print(f"Pulling out the {weapon}, you make one final attempt at your freedom and {attack} Holmes, ")
         print("hitting him across the face.\n")
         print("You watch in terror as the man recoils. \n")
         print('"Now is my chance."\n')
@@ -567,35 +552,50 @@ def room_seven_injury():
         while True:
             answer = input("> ")
             if answer == "1": 
-                text.room_seven_ending_7()
+                # text.room_seven_ending_3()
+                print("You continue toward the exit and pull the door, but it's padlocked.\n")
+                print(f"With all your might and adrenaline, you use the {weapon} to force the padlock open ")
+                print("and rush out the open door.\n")
+                print("As pain rips through your leg, you force every ounce of energy into running, ")
+                print("wanting nothing but to escape this horrible place.\n")
+                print("Never looking back, you run until you find a dock and a small boat and stumble onto it.\n")
+                ending = "3"
+                win_game()
             elif answer == "2": 
-                text.room_seven_ending_8()
+                # text.room_seven_ending_4()
+                print("High on adrenaline, you launch yourself at Holmes, ")
+                print("but the injury steals so much energy that you don't have enough to get a final blow.\n")
+                print(f"The {weapon} is torn from your hand, and you choke suddenly ")
+                print("as Holmes strikes a cold, metal object through your throat.\n")
+                print("Gasping and gurgling, you fall to the floor, just out of reach of your freedom.\n")
+                ending = "4"
+                game_over()
             else:
                 print("Incorrect value")
                 print("Please, enter a number corresponding with your choice")
 
 
     if injury and not weapon:
-        while True:
-            answer = input("> ")
-            if answer == "1": 
-                text.room_seven_ending_9()
-            elif answer == "2": 
-                text.room_seven_ending_10()
-            else:
-                print("Incorrect value")
-                print("Please, enter a number corresponding with your choice")
+        text.room_seven_ending_9()
+        ending = "5"
+        game_over()
 
 
 def win_game():
     print("With lady luck on your side, you tug the rope to the motor, and it whirs alive.\n")
     print("ith no idea where you are, any place is better than here, so you set off across the water, ")
     print("certain that any destination is better than the Murder Castle.\n")
-    print("And that you'll never read another true crime story.")
+    print("And that you'll never read another true crime story.\n")
+
+    print(f"You got ending {ending} of 5")
+
 
 
 def game_over():
     print("Game over")
+
+    print(f"You got is {ending} of 5")
+
     # intro()
 
 
