@@ -1,3 +1,11 @@
+import time
+
+weapon = None
+attack = None
+rest = False
+injury = False
+ending = None
+
 # def room_six_a_choice_three():
 #     print("Frozen in fear, you remain in your spot, but it doesn't take ")
 #     print("long before the figure returns ")
@@ -15,23 +23,53 @@ def incorrect():
 # """"""""
 
 
+def welcome():
+    print("\nOh, hello there, I didn't see you.\n")
+    # time.sleep(2)
+    print("Welcome, welcome! To our little game.\n")
+    # time.sleep(2)
+    print("May I ask your name?\n")
+    name = input("> ")
+    print("")
+    # time.sleep(1)
+    print(f"{name}, you say? Marvelous!\n")
+    # time.sleep(2)
+    print("I hope you are ready for an adventure.\n")
+    # time.sleep(2)
+    print("One you may, or may not, return from. \n")
+    # time.sleep(2)
+    print("Ah, but don't fret, I'm sure you'll be fine.\n")
+    # time.sleep(2)
+    print("It's only a game, after all.\n")
+    # time.sleep(2)
+    print("Right?\n")
+    # time.sleep(2)
+    print("Now, let us begin.\n")
+    # time.sleep(2)
+    print("Welcome, my dear, to the wonderful world of...\n")
+    # time.sleep(3)
+
+
 def intro_text():
+    # time.sleep(3)
     print("\nYou've read stories about people reading a book and waking up ")
     print("in a new world set within the pages of their favorite novel.\n")
     # time.sleep(4)
     print("Same old story every time.\n")
     # time.sleep(3)
     print("They end up as the protagonist or love interest and ")
-    print("have to maneuver a story they either know by heart")
-    print(", or barely at all.\n")
+    print("have to maneuver a story they either know by heart,")
+    print("or barely at all.\n")
     # time.sleep(4)
     print('"Fun, but nonsense," you tell yourself as you put the ')
     print("Biography of H.H Holmes - 'America's First Serial Killer' ")
     print("down on the bedside table.\n")
-    # time.sleep(4)
+    # time.sleep(5)
     print("Yawning, you turn off the light, ready for a good night's sleep ")
     print("as the rain patters on the window.\n")
+    # time.sleep(2)
     print("1. Goodnight\n")
+    # time.sleep(2)
     print("(Psst, type the number of your choice and press Enter to continue)")
 
 # """"""""""""
@@ -40,17 +78,16 @@ def intro_text():
 
 
 def room_one_text():
-    print("R O O M  O N E\n\n")
     print("Your sleep is sound and undisturbed until you ")
     print("stir from an odd smell.\n")
     # time.sleep(4)
     print("It's nothing you've ever encountered before, tangy and sharp,")
-    print("and you're abruptly woken up when your throat clenches.")
+    print("and you're abruptly woken up when your throat clenches.\n")
     print('"Gas," you conclude in horror as your eyes water and the uncanny')
     print('hiss of poisonous air leak into the room.\n')
     # time.sleep(4)
     print("Only it's not your room, and you're not in bed --")
-    print("you're slouching against a tiled wall in a cramped space ")
+    print("you're slouching against a tiled wall in a cramped area ")
     print("with just enough space to turn and stretch your arms.\n")
 
     print("\nWhat do you do?\n")
@@ -83,7 +120,6 @@ def room_one_2():
 
 
 def room_two_text():
-    print("R O O M  T W O\n\n")
     print("Looking around, you're in the middle of a long hallway, ")
     print("both ends leading to different directions.\n")
     # time.sleep(3)
@@ -137,8 +173,7 @@ def room_two_2():
 # " ROOM THREE "
 # """"""""""""""
 
-def room_three_text():
-    print("R O O M  T H R E E\n\n")
+def room_three():
     print("The corridor turns and twists.\n")
     # time.sleep(3)
     print("Walls, and floors in similar red shades making the narrow ")
@@ -195,7 +230,6 @@ def room_three_3():
 
 
 def room_four_text():
-    print("R O O M  F O U R\n\n")
     print('"This reminds me of the Murder Castle," you think as you ')
     print("cautiously walk down a curved flight of stairs, ")
     print("each move soft and careful as you tread each step.\n")
@@ -284,7 +318,7 @@ def room_four_4_rest():
 # " ROOM FIVE A "
 # """""""""""""""
 
-def room_five_a_text():
+def room_five_a():
     global injury
     global weapon
     global attack
@@ -316,9 +350,11 @@ def room_five_a_1():
 
 
 def room_five_a_2():
-    print("Certain it will backfire in some horrible way, you ")
+    global weapon
+    print("\nCertain it will backfire in some horrible way, you ")
     print(f"leave the {weapon} alone, and move on through the lab.")
     print("\n\n")
+    weapon = False
 
 
 def room_five_a_continuation():
@@ -359,6 +395,12 @@ def room_five_a_not_rested():
 # """""""""""""""
 
 def room_five_b():
+    global injury
+    global weapon
+    global attack
+    weapon = "screwdriver"
+    attack = "stab"
+
     print("Down the stairs, you find yourself in another corridor ")
     print("snaking left to right.\n")
     print("Knowing that death might come around any corner, you move slowly, ")
@@ -425,6 +467,7 @@ def room_five_b_weapon():
 
 
 def room_five_b_weapon_1():
+    global weapon
     print(f"Carefully, you ease the object out - it's a {weapon}.\n")
     print("Handy.\n")
     print("You pocket it and hurry what you hope is the ")
@@ -488,6 +531,8 @@ def room_six_2():
 # """"""""""""""
 
 def room_seven():
+    global ending
+
     print("Finally, you make it to the bottom floor and, even better, ")
     print("the front door!\n")
     print("Eager to escape this nightmare, you hurry across the room, ")
@@ -504,7 +549,7 @@ def room_seven():
     print("1. Run for the exit.")
     print("2. Attack H. H Holmes.\n")  
 
-def room_seven_no_injury_1():
+def room_seven_ending_1():
     print("You bolt towards the exit and pull the door, ")
     print("but it's padlocked.\n")
     print(f"As Holmes slowly approaches, you pull the {weapon} ")
@@ -516,7 +561,7 @@ def room_seven_no_injury_1():
     print("a small boat and leap onto it.\n")
 
 
-def room_seven_no_injury_2():
+def room_seven_ending_2():
     print("High on adrenaline, you launch yourself at Holmes with")
     print("enough strength that he stumbles backward,")
     print("giving you a perfect option to strike ")
@@ -554,7 +599,7 @@ def room_seven_injury():
     print("2. Attack H. H Holmes again\n")
 
 
-def room_seven_injury_1():
+def room_seven_ending_3():
 
     print("You continue toward the exit and pull the door, ")
     print("but it's padlocked.\n")
@@ -568,7 +613,7 @@ def room_seven_injury_1():
     print("and a small boat and stumble onto it.\n")
 
 
-def room_seven_injury_2():
+def room_seven_ending_4():
     print("High on adrenaline, you launch yourself at Holmes, ")
     print("but the injury steals so much energy that you ")
     print("don't have enough to get a final blow.\n")
@@ -598,3 +643,5 @@ def win_game():
     print("so you set off across the water, ")
     print("certain that any destination is better than the Murder Castle.\n")
     print("And that you'll never read another true crime story.\n")
+
+# def game_over():
