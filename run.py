@@ -3,6 +3,17 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows hig
 
 """
+Måndag:
+- Fyll i alla time.sleep funktioner
+- Fixa så endast bokstäver kan fyllas i i namn
+- Skriv string-statements/beskrivningar till alla funktioner
+- Skriv en "game-over" function
+- Skriv en "game-win" funktion
+- Skriv en "game-quit" funktion
+- Skriv en "game-restart" funktion
+"""
+
+"""
 Imports
 """
 import story
@@ -31,7 +42,6 @@ def welcome():
     print(result_1, result_2)
 
     intro()
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def punctuation_pause():
@@ -52,6 +62,7 @@ with a general idea of what the game is about
 def intro():
 
     story.intro_text()
+
     while True:
         answer = input("> ")
         if answer == "1":
@@ -170,8 +181,9 @@ def room_three():
 
 
 def room_four():
-
+    punctuation_pause()
     story.room_four_text()
+
     while True:
         answer = input("> ")
         if answer == "1":
@@ -182,6 +194,7 @@ def room_four():
         elif answer == "2":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_four_2()
+            punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
@@ -213,11 +226,13 @@ def room_four_4():
         elif answer == "2":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_four_2()
+            punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_four_3()
+            punctuation_pause()
             room_five_b()
             break
         else:
@@ -243,10 +258,12 @@ def room_five_a():
         if answer == "1":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_five_a_1()
+            punctuation_pause()
             break
         if answer == "2":
-            story.room_five_a_2()
             os.system('cls' if os.name == 'nt' else 'clear')
+            story.room_five_a_2()
+            punctuation_pause()
             break
         else:
             story.incorrect()
@@ -255,9 +272,11 @@ def room_five_a():
 
     if rest:
         story.room_five_a_rested()
+        punctuation_pause()
     else:
         story.room_five_a_not_rested()
         injury = True
+        punctuation_pause()
     room_six()
 
 
@@ -329,15 +348,16 @@ def room_six():
         if answer == "1":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_six_1()
-            break
             game_over()
+            break
         elif answer == "2":
             os.system('cls' if os.name == 'nt' else 'clear')
             story.room_six_2()
+            punctuation_pause()
+            room_seven()
             break
         else:
             story.incorrect()
-    room_seven()
 
 
 def room_seven():
@@ -391,13 +411,12 @@ def room_seven():
 
 def win_game():
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+
     story.win_game()
     print(f"You got ending {ending} of 5")
 
 
 def game_over():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
     print("Game over")
     print(f"You got ending {ending} of 5")

@@ -29,7 +29,13 @@ def welcome():
     print("Welcome, welcome! To our little game.\n")
     # time.sleep(2)
     print("May I ask your name?\n")
-    name = input("> ")
+    while True:
+        name = input("> ")
+        if not name.isdigit():
+            break
+        else:
+            print("Hrrm, hrrm, a proper name, please.")
+            
     print("")
     # time.sleep(1)
     print(f"{name}, you say? Marvelous!\n")
@@ -230,7 +236,7 @@ def room_three_3():
 
 
 def room_four_text():
-    print('"This reminds me of the Murder Castle," you think as you ')
+    print('\n"This reminds me of the Murder Castle," you think as you ')
     print("cautiously walk down a curved flight of stairs, ")
     print("each move soft and careful as you tread each step.\n")
     # time.sleep(3)
@@ -345,8 +351,8 @@ def room_five_a():
 def room_five_a_1():
     print(f"\nYou gently pick the {weapon} up and study it, ")
     print("quickly realizing it could contain absolutely anything.\n")
-    print('"Anything\'s better than nothing," you conclude .')
-    print("and move on through the lab\n")
+    print('"Anything\'s better than nothing," you conclude, and')
+    print("move on through the lab.\n")
 
 
 def room_five_a_2():
