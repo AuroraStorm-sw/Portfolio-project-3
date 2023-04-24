@@ -1,18 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows hig
-
-"""
-Måndag:
-- Fyll i alla time.sleep funktioner
-- Fixa så endast bokstäver kan fyllas i i namn
-- Skriv string-statements/beskrivningar till alla funktioner
-- Skriv en "game-over" function
-- Skriv en "game-win" funktion
-- Skriv en "game-quit" funktion
-- Skriv en "game-restart" funktion
-"""
-
 """
 Imports
 """
@@ -23,6 +8,22 @@ import os
 import sys
 
 """
+Måndag:
+- Fyll i alla time.sleep funktioner
+X Fixa så endast bokstäver kan fyllas i i namn
+- Skriv string-statements/beskrivningar till alla funktioner
+X Skriv en "game-start" function
+- Skriv en "game-over" function
+- Skriv en "game-win" funktion
+- Skriv en "game-quit" funktion
+- Skriv en "game-restart" funktion
+- Lägg till namn f-strings där det behövs (win/game over)
+- Skapa variabel for OS clean
+- Skriv README
+"""
+
+
+"""
 Variables
 """
 weapon = None
@@ -30,6 +31,22 @@ attack = None
 rest = False
 injury = False
 ending = None
+
+def start_game():
+    story.start_game()
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            welcome()
+            break
+        elif answer == "2":
+            story.not_start_game()
+            game_over()
+            break
+        else:
+            story.incorrect()
 
 
 def welcome():
@@ -42,15 +59,6 @@ def welcome():
     print(result_1, result_2)
 
     intro()
-
-
-def punctuation_pause():
-    string = '.\n'
-    for char in string:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(1)
-    
 
 
 """
@@ -409,21 +417,56 @@ def room_seven():
                 story.incorrect()
 
 
+def punctuation_pause():
+    string = '.\n'
+    for char in string:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(1)
+
+def restart_game():
+    story.restart_game()
+    room_one()
+
 def win_game():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-    story.win_game()
     print(f"You got ending {ending} of 5")
+    story.win_game()
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            story.restart_game()
+            restart_game()
+        else:
+            result_1 = pyfiglet.figlet_format("                     The")
+            result_2 = pyfiglet.figlet_format("Murder Castle")
+            print(result_1, result_2)
+            start_game()   
 
 
 def game_over():
-
-    print("Game over")
     print(f"You got ending {ending} of 5")
-    # intro()
+    story.ask_to_restart_game()
+
+    while True:
+        answer = input("> ")
+        if answer == "1":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            story.restart_game()
+            restart_game()
+            break
+        elif answer == "2":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            story.not_start_game()
+            game_over()
+            break
+        else:
+            story.incorrect()
+
 
 def main():
-    welcome()
+    start_game()
 
 
 main()

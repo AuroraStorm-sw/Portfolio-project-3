@@ -6,6 +6,8 @@ rest = False
 injury = False
 ending = None
 
+global name
+
 # def room_six_a_choice_three():
 #     print("Frozen in fear, you remain in your spot, but it doesn't take ")
 #     print("long before the figure returns ")
@@ -22,8 +24,26 @@ def incorrect():
 # " INTRO "
 # """"""""
 
+def start_game():
+    print("Ah, another subject.\n")
+    print("Sorry, I mean player, of course.\n")
+    print("Don't mind me.\n")
+    print("He's waiting for you in his office.\n")
+    print("Ready to go?\n")
+    print("1. Yes.")
+    print("2. No.")
+
+def not_start_game():
+    print("\nNo?\n")
+    print("Shame.\n")
+    print("Well, then, I'm making some tea.\n")
+    print("Care for a cup?\n")
+    print("It's to die for.\n\n")
+
 
 def welcome():
+    global name
+
     print("\nOh, hello there, I didn't see you.\n")
     # time.sleep(2)
     print("Welcome, welcome! To our little game.\n")
@@ -31,11 +51,10 @@ def welcome():
     print("May I ask your name?\n")
     while True:
         name = input("> ")
-        if not name.isdigit():
+        if name.isalpha():
             break
         else:
-            print("Hrrm, hrrm, a proper name, please.")
-            
+            print("Hrrm, hrrm, a proper name, please.")           
     print("")
     # time.sleep(1)
     print(f"{name}, you say? Marvelous!\n")
@@ -76,7 +95,7 @@ def intro_text():
     # time.sleep(2)
     print("1. Goodnight\n")
     # time.sleep(2)
-    print("(Psst, type the number of your choice and press Enter to continue)")
+
 
 # """"""""""""
 # " ROOM ONE "
@@ -331,7 +350,7 @@ def room_five_a():
     weapon = "vial"
     attack = "splash"
 
-    print("You walk down the set of stairs and into what looks like a ")
+    print("\nYou walk down the set of stairs and into what looks like a ")
     print("chemistry lab.\n")
     # time.sleep(3)
     print("Dimly lit with tables cluttered with needles, vials, jars, ")
@@ -642,12 +661,38 @@ def room_seven_insta_death():
     print("just out of reach of your freedom.\n")
 
 
+def ask_to_restart_game():
+    global name
+
+    print("Well, well, that was exciting, wasn't it?\n")
+    print(f"Oh, don't mope, {name}, you did great!\n")
+    print("Want to try again?\n")
+
+    print("1. Yes. \n")
+    print("2. No. \n")
+
+
+def restart_game():
+    print("\nRight at it again, hm?\n")
+    print("That's the spirit.\n")
+    print("Off you go.\n")
+
+
 def win_game():
+    global name 
+
     print("With lady luck on your side, you tug the rope to the motor, ")
     print("and it whirs alive.\n")
     print("Eith no idea where you are, any place is better than here, ")
     print("so you set off across the water, ")
     print("certain that any destination is better than the Murder Castle.\n")
-    print("And that you'll never read another true crime story.\n")
+    print("And that you'll never read another true crime story.\n\n")
+    print("Well, well, well, look at that!.\n")
+    print(f"Marvelous work, {name}, you made it out alive.\n")
+    print("I knew you had it in you.\n")
+    print("So, what's next?.\n")
+    print("Do you want another go, or is it time to leave?.\n")
+    print("1. Play again.\n")
+    print("2. Time to leave.\n")
 
 # def game_over():
