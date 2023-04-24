@@ -440,7 +440,6 @@ def restart_game():
 
 
 def win_game():
-    clear_terminal()
     print(f"You got ending {ending} of 6\n")
     punctuation_pause()
     story.win_game()
@@ -473,6 +472,7 @@ def game_over():
             break
         else:
             story.incorrect()
+
 
 def main():
     start_game()

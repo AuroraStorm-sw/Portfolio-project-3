@@ -1,31 +1,46 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# THE MURDER CASTLE
 
-Welcome Aurora,
+This Python-based text based adventure game is loosely based on the history of H. H Holmes, a serial killer from America that allegedly clamed at least 27 lives in his [Murder Castle](https://www.history.com/topics/crime/murder-castle#section_2). 
+I've also taken inspiration from the [video game](https://en.wikipedia.org/wiki/The_Dark_Pictures_Anthology:_The_Devil_in_Me) "The Dark Pictures Anthology: The Devil in Me" by Supermassive Games.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Throughout the game, there are multiple choices leading either to death or survival, and depending on what choices you make along the way, your chance of escaping the Murder Castle increases. Or decreases.
 
-## Reminders
+As a true crime enthusiast, the idea came naturally, and creating all the rooms with this as inspiration was highly enjoyable.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+- [UX](#ux)
+    - [User goals](#user-goals)
+        - [Returning visitor goals](#returning-visitor-goals)
+        - [As a website owner](#as-a-website-owner)
+- [Flowshart](#flowshart)
+- [Designs](#designs)
+    - [ASCII](#ascii)
+- [Features](#features)
+    - [Features left to implement](#features-left-to-implement)
+- [Testing](#testing)
+    - [Validator testing](#validator-testing)
+    - [Manual testing](#manual-testing)
+    - [Bugs](#bugs)
+- [Deployment](#deployment)
+- [Tools](#tools)
+- [Credits](#credits)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+# UX
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## User goals
+- To play and enjoy a text-based game
+- Understand how the game works at the start of the game
+- Play a game that streamlined and easy to follow along
+- Learn a touch of history about a famous serial killer
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Returning visitor goals:
+- Being able to replay the game with different outcomes
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## As a website owner:
+- Being able to easily add more rooms to the game to keep it updated
 
-Connect your GitHub repository and deploy as normal.
+# Flowchart
+The outline of the game was made with the help of [Ludichart](https://www.lucidchart.com/pages/)
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+![Ludichart1](documentation/ludichart_1.PNG)
+![Ludichart1](documentation/ludichart_2.PNG)
