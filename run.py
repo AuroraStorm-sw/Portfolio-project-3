@@ -160,7 +160,7 @@ def room_two():
         if answer == "1":
             clear_terminal()
             story.room_two_1()
-            ending = ""
+            ending = "Black Knight"
             game_over()
             break
         elif answer == "2":
@@ -515,7 +515,13 @@ def restart_game():
     Function to restart the game whenever the
     player dies. Gives the player the option to 
     restart or not.
+    Also resets the rest and injury variables so
+    they don't remain when the game is replayed
     """
+    global rest
+    global injury
+    rest = False
+    injury = False
     story.restart_game()
     room_one()
 
@@ -525,7 +531,7 @@ def win_game():
     Function for when the player wins the game, also offers
     the option to restart and play another game.
     """
-    print(f"You got ending {ending} of 6\n")
+    print(f"You got the {ending} ending\n")
     punctuation_pause()
     story.win_game()
 
