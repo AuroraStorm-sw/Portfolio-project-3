@@ -134,7 +134,7 @@ def room_one():
         elif answer == "2":
             clear_terminal()
             story.room_one_2()
-            ending = "Dreamers Escape"
+            ending = '"Dreamers Escape"'
             game_over()
             break
         else:
@@ -160,7 +160,7 @@ def room_two():
         if answer == "1":
             clear_terminal()
             story.room_two_1()
-            ending = "Black Knight"
+            ending = '"Black Knight"'
             game_over()
             break
         elif answer == "2":
@@ -197,13 +197,13 @@ def room_three():
         elif answer == "2":
             clear_terminal()
             story.room_three_2()
-            ending = "Straight to the point"
+            ending = '"Straight to the point"'
             game_over()
             break
         elif answer == "3":
             clear_terminal()
             story.room_three_3()
-            ending = "Let's forget this one"
+            ending = '"Let\'s forget this one"'
             game_over()
             break
         else:
@@ -235,7 +235,7 @@ def room_four():
         if answer == "1":
             clear_terminal()
             story.room_four_1()
-            ending = "On point"
+            ending = '"On point"'
             game_over()
             break
         elif answer == "2":
@@ -275,7 +275,7 @@ def room_four_4():
         if answer == "1":
             clear_terminal()
             story.room_four_1()
-            ending = "On point"
+            ending = "'On point"'
             game_over()
             break
         elif answer == "2":
@@ -366,6 +366,7 @@ def room_five_b():
     get injuried or not, depending on if they rested earlier, 
     which will also affect the end of the game.
     """
+    global ending
     global injury
     global weapon
     global attack
@@ -379,6 +380,7 @@ def room_five_b():
         if answer == "1":
             clear_terminal()
             story.room_five_b_1()
+            ending = '"One final view"'
             game_over()
             continue
         elif answer == "2":
@@ -433,7 +435,7 @@ def room_six():
         if answer == "1":
             clear_terminal()
             story.room_six_1()
-            ending = "Together in the end"
+            ending = '"Together in the end"'
             game_over()
             break
         elif answer == "2":
@@ -466,13 +468,13 @@ def room_seven():
             if answer == "1":
                 clear_terminal()
                 story.room_seven_ending_1()
-                ending = "Energized Escapee"
+                ending = '"Energized Escapee"'
                 win_game()
                 break
             elif answer == "2":
                 clear_terminal()
                 story.room_seven_ending_2()
-                ending = "Bloodied Escapee"
+                ending = '"Bloodied Escapee"'
                 win_game()
                 break
             else:
@@ -485,13 +487,13 @@ def room_seven():
             if answer == "1":
                 clear_terminal()
                 story.room_seven_ending_3()
-                ending = "Beaten but Determined"
+                ending = '"Beaten but Determined"'
                 win_game()
                 break
             elif answer == "2":
                 clear_terminal()
                 story.room_seven_ending_4()
-                ending = "Overly Enthusiastic"
+                ending = '"Overly Enthusiastic"'
                 game_over()
                 break
             else:
@@ -500,13 +502,13 @@ def room_seven():
     if injury is False and weapon is False:
         # clear_terminal()
         story.room_seven_insta_death_no_injury()
-        ending = "Trapped Rat"
+        ending = '"Trapped Rat"'
         game_over()
 
     if injury is True and weapon is False:
         clear_terminal()
         story.room_seven_insta_death_injury()
-        ending = "Wounded and lost"
+        ending = '"Wounded and Lost"'
         game_over()
 
 
