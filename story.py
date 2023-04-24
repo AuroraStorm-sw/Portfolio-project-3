@@ -553,7 +553,7 @@ def room_six_2():
 def room_seven():
     global ending
 
-    print("Finally, you make it to the bottom floor and, even better, ")
+    print("\nFinally, you make it to the bottom floor and, even better, ")
     print("the front door!\n")
     print("Eager to escape this nightmare, you hurry across the room, ")
     print("only to freeze when footsteps echo behind you.\n")
