@@ -20,25 +20,27 @@ X Skriv en "game-start" function
 - Lägg till namn f-strings där det behövs (win/game over)
 X Skapa variabel for OS clean
 - Skriv README
+- Lägg till Endings
 """
 
 
 """
 Variables
 """
+
 weapon = None
 attack = None
 rest = False
 injury = False
 ending = None
 
+
 def clear_terminal():
-    
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def punctuation_pause():
-    string = '...\n'
+    string = '.\n'
     for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -46,6 +48,9 @@ def punctuation_pause():
 
 
 def start_game():
+    result_1 = pyfiglet.figlet_format("Welcome in")
+    print(result_1)
+    punctuation_pause()
     story.start_game()
 
     while True:
@@ -54,19 +59,19 @@ def start_game():
             welcome()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.not_start_game()
             punctuation_pause()
-            print("\nLet's try that again...\n")
+            print('\n"Let\'s try that again, shall we?"\n')
             punctuation_pause()
-            clear_terminal()
+            # clear_terminal()
             story.start_game()
         else:
             story.incorrect()
 
 
 def welcome():
-    clear_terminal()
+    # clear_terminal()
     punctuation_pause()
 
     story.welcome()
@@ -115,17 +120,17 @@ def intro():
 # """
 
 def room_one():
-    clear_terminal()
+    # clear_terminal()
     story.room_one_text()
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_one_1()
             room_two()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_one_2()
             game_over()
             break
@@ -143,12 +148,12 @@ def room_two():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_two_1()
             game_over()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_two_2()
             room_three()
             break
@@ -173,17 +178,17 @@ def room_three():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_three_1()
             room_four()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_three_2()
             game_over()
             break
         elif answer == "3":
-            clear_terminal()
+            # clear_terminal()
             story.room_three_3()
             game_over()
             break
@@ -213,23 +218,23 @@ def room_four():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_1()
             game_over()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_2()
             punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_3()
             room_five_b()
             break
         elif answer == "4":
-            clear_terminal()
+            # clear_terminal()
             room_four_4()
             break
         else:
@@ -241,22 +246,23 @@ def room_four_4():
     rest = True
 
     story.room_four_4_rest()
+    print(rest)
 
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_1()
             game_over()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_2()
             punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
-            clear_terminal()
+            # clear_terminal()
             story.room_four_3()
             punctuation_pause()
             room_five_b()
@@ -282,13 +288,17 @@ def room_five_a():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_five_a_1()
             punctuation_pause()
+            weapon = True
+            print(weapon)
             break
         if answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_five_a_2()
+            weapon = False
+            print(weapon)
             punctuation_pause()
             break
         else:
@@ -302,6 +312,7 @@ def room_five_a():
     else:
         story.room_five_a_not_rested()
         injury = True
+        print(injury)
         punctuation_pause()
     room_six()
 
@@ -324,22 +335,22 @@ def room_five_b():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_five_b_1()
             game_over()
             continue
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_five_b_2()
             break
         else:
             story.incorrect()
-    
+
     if rest:
-        clear_terminal()
+        # clear_terminal()
         story.room_five_b_rested()
     else:
-        clear_terminal()
+        # clear_terminal()
         story.room_five_b_not_rested()
 
     injury = True
@@ -350,10 +361,13 @@ def room_five_b():
         answer = input("> ")
         if answer == "1":
             story.room_five_b_weapon_1()
+            weapon = True
+            print(weapon)
             break
         elif answer == "2":
             story.room_five_b_weapon_2()
             weapon = False
+            print(weapon)
             break
         else:
             story.incorrect()
@@ -372,14 +386,13 @@ def room_six():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.room_six_1()
             game_over()
             break
         elif answer == "2":
-            clear_terminal()
+            # clear_terminal()
             story.room_six_2()
-            punctuation_pause()
             room_seven()
             break
         else:
@@ -389,11 +402,7 @@ def room_six():
 def room_seven():
     global ending
 
-    if injury and not weapon:
-        clear_terminal()
-        story.room_seven_insta_death()
-        ending = "5"
-        game_over()
+    print("Room seven")
 
     if not injury and weapon:
         story.room_seven()
@@ -416,44 +425,52 @@ def room_seven():
 
     if injury and weapon:
         story.room_seven_injury()
-
         while True:
             answer = input("> ")
             if answer == "1":
-                clear_terminal()
                 story.room_seven_ending_3()
                 ending = "3"
                 win_game()
                 break
             elif answer == "2":
-                clear_terminal()
                 story.room_seven_ending_4()
                 ending = "4"
                 game_over()
                 break
             else:
                 story.incorrect()
+                
+    if not injury and not weapon:
+        # clear_terminal()
+        story.room_seven_insta_death_no_injury()
+        ending = "5"
+        game_over()
 
+    if injury and not weapon:
+        # clear_terminal()
+        story.room_seven_insta_death_injury()
+        ending = "6"
+        game_over()
 
 def restart_game():
     story.restart_game()
     room_one()
 
+
 def win_game():
-    clear_terminal()
-    print(f"You got ending {ending} of 5")
+    # clear_terminal()
+    print(f"You got ending {ending} of 5\n")
+    punctuation_pause()
     story.win_game()
 
     while True:
         answer = input("> ")
         if answer == "1":
             story.restart_game()
+            punctuation_pause()
             restart_game()
         else:
-            result_1 = pyfiglet.figlet_format("                     The")
-            result_2 = pyfiglet.figlet_format("Murder Castle")
-            print(result_1, result_2)
-            start_game()   
+            start_game()
 
 
 def game_over():
@@ -464,13 +481,13 @@ def game_over():
     while True:
         answer = input("> ")
         if answer == "1":
-            clear_terminal()
+            # clear_terminal()
             story.restart_game()
             restart_game()
             break
         elif answer == "2":
-            clear_terminal()
-            story.not_start_game()
+            # clear_terminal()
+            start_game()
             game_over()
             break
         else:

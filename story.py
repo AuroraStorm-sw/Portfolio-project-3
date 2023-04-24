@@ -18,22 +18,22 @@ def incorrect():
 # """"""""
 
 def start_game():
-    print("\nAh, another subject.\n")
-    print("Sorry, I mean player, of course.\n")
-    print("Don't mind me.\n")
-    print("He's waiting for you in his office.\n")
-    print("Ready to go?\n")
-    print("Just type the number of your choice, ")
-    print("and press Enter.\n")
+    print('\n"Ah, another subject".\n')
+    print('"Sorry, I mean player, of course."\n')
+    print('"Don\'t mind me".\n')
+    print('"He\'s waiting for you in his office."\n')
+    print('"Ready to go?"\n')
+    print('"Just type the number of your choice, ')
+    print('and press Enter".\n')
     print("1. Yes.")
     print("2. No.\n")
 
 def not_start_game():
-    print("\nNo?\n")
-    print("Shame.\n")
-    print("Well, then, I'm making some tea.\n")
-    print("Care for a cup?\n")
-    print("It's to die for.\n\n")
+    print('\n"No?"\n')
+    print('"Shame."\n')
+    print('"Well, then, I\'m making some tea."\n')
+    print('"Care for a cup?"\n')
+    print('"It\'s to die for."\n\n')
 
 
 def welcome():
@@ -194,7 +194,7 @@ def room_two_2():
 # """"""""""""""
 
 def room_three():
-    print("The corridor turns and twists.\n")
+    print("\nThe corridor turns and twists.\n")
     # time.sleep(3)
     print("Walls, and floors in similar red shades making the narrow ")
     print("hallways disorienting even though there's only one way.\n")
@@ -306,7 +306,7 @@ def room_four_3():
     # time.sleep(3)
     print("With sweat beading on your forehead, you throw the door open ")
     print("and jump aside just in time for a rain ")
-    print("of arrows to fly past.")
+    print("of arrows to fly past.\n")
     # time.sleep(3)
     print("Shaking, you safely make it through the door and down ")
     print("a slim flight of stairs.\n\n")
@@ -367,6 +367,7 @@ def room_five_a_1():
     print("quickly realizing it could contain absolutely anything.\n")
     print('"Anything\'s better than nothing," you conclude, and')
     print("move on through the lab.\n")
+    
 
 
 def room_five_a_2():
@@ -374,7 +375,6 @@ def room_five_a_2():
     print("\nCertain it will backfire in some horrible way, you ")
     print(f"leave the {weapon} alone, and move on through the lab.")
     print("\n\n")
-    weapon = False
 
 
 def room_five_a_continuation():
@@ -528,7 +528,7 @@ def room_six_1():
 
 
 def room_six_2():
-    print("You hurry behind the old-timey piece of furniture and hold ")
+    print("\nYou hurry behind the old-timey piece of furniture and hold ")
     print("your breath as the footsteps come closer.\n")
     print("The pace is quick as if they're running, and you stare in shock ")
     print("as another civilian dashes past you toward the room you ")
@@ -542,7 +542,7 @@ def room_six_2():
     print("cane in hand and bowler hat on their head.\n")
     print("Same as the portrait. \n")
     print("Only when they've both disappeared do you dare move and ")
-    print("hurry in the opposite direction,as gut-wrenching screams ")
+    print("hurry in the opposite direction, as gut-wrenching screams ")
     print("echo behind you.\n\n")
 
 
@@ -567,7 +567,25 @@ def room_seven():
     print("What do you do?\n")
 
     print("1. Run for the exit.")
-    print("2. Attack H. H Holmes.\n")  
+    print("2. Attack H. H Holmes.\n")
+
+def room_seven_injury():
+    print("Slowly, hindered by your wound, you make it downstairs.")
+    print("Though, even the pain doesn't dampen the relief ")
+    print("of seeing the entrance.")
+    print("You limp towards the exit, but the injury holds you back, ")
+    print("and you don't reach the door before you're caught.\n")
+    print(f"Pulling out the {weapon}, you make one final attempt  ")
+    print(f"at your freedom and {attack} Holmes, hitting him")
+    print("across the face.\n")
+    print("You watch in terror as the man recoils.\n\n")
+    print('"Now is my chance."\n')
+
+    print("What do you do?\n")
+
+    print("1. Continue running for the exit.")
+    print("2. Attack H. H Holmes again\n")
+    
 
 def room_seven_ending_1():
     print("You bolt towards the exit and pull the door, ")
@@ -600,25 +618,6 @@ def room_seven_ending_2():
     print("Never looking back, you run until you find a dock and ")
     print("a small boat and leap onto it.\n")
 
-
-def room_seven_injury():
-    print("Slowly, hindered by your wound, you make it downstairs.")
-    print("Though, even the pain doesn't dampen the relief ")
-    print("of seeing the entrance.")
-    print("You limp towards the exit, but the injury holds you back, ")
-    print("and you don't reach the door before you're caught.\n")
-    print(f"Pulling out the {weapon}, you make one final attempt  ")
-    print(f"at your freedom and {attack} Holmes, hitting him")
-    print("across the face.\n")
-    print("You watch in terror as the man recoils.\n\n")
-    print('"Now is my chance."\n')
-
-    print("What do you do?\n")
-
-    print("1. Continue running for the exit.")
-    print("2. Attack H. H Holmes again\n")
-
-
 def room_seven_ending_3():
 
     print("You continue toward the exit and pull the door, ")
@@ -643,9 +642,19 @@ def room_seven_ending_4():
     print("Gasping and gurgling, you fall to the floor, ")
     print("just out of reach of your freedom.\n")
 
+def room_seven_insta_death_no_injury():
+    print("You bolt towards the exit and pull the door, ")
+    print("but it's padlocked.\n")
+    print("With nothing to defend yourself or break the lock ")
+    print("open, all you can do is watch in horror as")
+    print("something shiny flashes by, and you choke ")
+    print("suddenly as Holmes strikes a cold, metal object ")
+    print("through your neck.\n")
+    print("Gasping and gurgling, you fall to the floor, ")
+    print("just out of reach of your freedom.\n")
 
-# if injury and not weapon
-def room_seven_insta_death():
+
+def room_seven_insta_death_injury():
     print("You limp towards the exit, but the injury holds you back, ")
     print("and you don't reach the door before you're caught.\n")
     print("With nothing to defend yourself, all you can do is ")
@@ -657,9 +666,8 @@ def room_seven_insta_death():
 
 
 def ask_to_restart_game():
-
     print("\nWell, well, that was exciting, wasn't it?\n")
-    print(f"Oh, don't mope, dear, you did great!\n")
+    print("Oh, don't mope, dear, you did great!\n")
     print("Want to try again?\n")
     print("1. Yes.\n")
     print("2. No.\n")
@@ -687,6 +695,3 @@ def win_game():
     print("Do you want another go, or is it time to leave?.\n")
     print("1. Play again.\n")
     print("2. Time to leave.\n")
-
-# def game_over():
-#     global name
