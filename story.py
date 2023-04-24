@@ -8,13 +8,6 @@ ending = None
 
 global name
 
-# def room_six_a_choice_three():
-#     print("Frozen in fear, you remain in your spot, but it doesn't take ")
-#     print("long before the figure returns ")
-#     print("from his wretched deed, and the last thing you see is ")
-#     print("your favorite true crime murderer swing a blade at your throat.")
-#     print("Your death is slow as you bleed out on the floor.")
-
 
 def incorrect():
     print("Incorrect value")
@@ -25,13 +18,15 @@ def incorrect():
 # """"""""
 
 def start_game():
-    print("Ah, another subject.\n")
+    print("\nAh, another subject.\n")
     print("Sorry, I mean player, of course.\n")
     print("Don't mind me.\n")
     print("He's waiting for you in his office.\n")
     print("Ready to go?\n")
+    print("Just type the number of your choice, ")
+    print("and press Enter.\n")
     print("1. Yes.")
-    print("2. No.")
+    print("2. No.\n")
 
 def not_start_game():
     print("\nNo?\n")
@@ -54,7 +49,7 @@ def welcome():
         if name.isalpha():
             break
         else:
-            print("Hrrm, hrrm, a proper name, please.")           
+            print("\nHrrm, hrrm, a proper name, please.\n")           
     print("")
     # time.sleep(1)
     print(f"{name}, you say? Marvelous!\n")
@@ -662,14 +657,12 @@ def room_seven_insta_death():
 
 
 def ask_to_restart_game():
-    global name
 
-    print("Well, well, that was exciting, wasn't it?\n")
-    print(f"Oh, don't mope, {name}, you did great!\n")
+    print("\nWell, well, that was exciting, wasn't it?\n")
+    print(f"Oh, don't mope, dear, you did great!\n")
     print("Want to try again?\n")
-
-    print("1. Yes. \n")
-    print("2. No. \n")
+    print("1. Yes.\n")
+    print("2. No.\n")
 
 
 def restart_game():
@@ -696,3 +689,4 @@ def win_game():
     print("2. Time to leave.\n")
 
 # def game_over():
+#     global name

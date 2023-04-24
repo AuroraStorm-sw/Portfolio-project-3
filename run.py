@@ -18,7 +18,7 @@ X Skriv en "game-start" function
 - Skriv en "game-quit" funktion
 - Skriv en "game-restart" funktion
 - Lägg till namn f-strings där det behövs (win/game over)
-- Skapa variabel for OS clean
+X Skapa variabel for OS clean
 - Skriv README
 """
 
@@ -32,24 +32,41 @@ rest = False
 injury = False
 ending = None
 
+def clear_terminal():
+    
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def punctuation_pause():
+    string = '...\n'
+    for char in string:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(1)
+
+
 def start_game():
     story.start_game()
 
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
             welcome()
             break
         elif answer == "2":
+            clear_terminal()
             story.not_start_game()
-            game_over()
-            break
+            punctuation_pause()
+            print("\nLet's try that again...\n")
+            punctuation_pause()
+            clear_terminal()
+            story.start_game()
         else:
             story.incorrect()
 
 
 def welcome():
+    clear_terminal()
     punctuation_pause()
 
     story.welcome()
@@ -57,6 +74,8 @@ def welcome():
     result_1 = pyfiglet.figlet_format("                     The")
     result_2 = pyfiglet.figlet_format("Murder Castle")
     print(result_1, result_2)
+
+    punctuation_pause()
 
     intro()
 
@@ -68,7 +87,6 @@ with a general idea of what the game is about
 
 
 def intro():
-
     story.intro_text()
 
     while True:
@@ -76,7 +94,6 @@ def intro():
         if answer == "1":
             print("\nSleep well.\n\n")
             # time.sleep(3)
-            os.system('cls' if os.name == 'nt' else 'clear')
             room_one()
             break
         if answer == "2":
@@ -98,16 +115,17 @@ def intro():
 # """
 
 def room_one():
+    clear_terminal()
     story.room_one_text()
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_one_1()
             room_two()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_one_2()
             game_over()
             break
@@ -125,12 +143,12 @@ def room_two():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_two_1()
             game_over()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_two_2()
             room_three()
             break
@@ -155,17 +173,17 @@ def room_three():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_three_1()
             room_four()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_three_2()
             game_over()
             break
         elif answer == "3":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_three_3()
             game_over()
             break
@@ -195,23 +213,23 @@ def room_four():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_1()
             game_over()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_2()
             punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_3()
             room_five_b()
             break
         elif answer == "4":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             room_four_4()
             break
         else:
@@ -227,18 +245,18 @@ def room_four_4():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_1()
             game_over()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_2()
             punctuation_pause()
             room_five_a()
             break
         elif answer == "3":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_four_3()
             punctuation_pause()
             room_five_b()
@@ -264,12 +282,12 @@ def room_five_a():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_five_a_1()
             punctuation_pause()
             break
         if answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_five_a_2()
             punctuation_pause()
             break
@@ -306,22 +324,22 @@ def room_five_b():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_five_b_1()
             game_over()
             continue
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_five_b_2()
             break
         else:
             story.incorrect()
     
     if rest:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear_terminal()
         story.room_five_b_rested()
     else:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear_terminal()
         story.room_five_b_not_rested()
 
     injury = True
@@ -354,12 +372,12 @@ def room_six():
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_six_1()
             game_over()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.room_six_2()
             punctuation_pause()
             room_seven()
@@ -372,7 +390,7 @@ def room_seven():
     global ending
 
     if injury and not weapon:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear_terminal()
         story.room_seven_insta_death()
         ending = "5"
         game_over()
@@ -382,13 +400,13 @@ def room_seven():
         while True:
             answer = input("> ")
             if answer == "1":
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_terminal()
                 story.room_seven_ending_1()
                 ending = "1"
                 win_game()
                 break
             elif answer == "2":
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_terminal()
                 story.room_seven_ending_2()
                 ending = "2"
                 win_game()
@@ -402,13 +420,13 @@ def room_seven():
         while True:
             answer = input("> ")
             if answer == "1":
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_terminal()
                 story.room_seven_ending_3()
                 ending = "3"
                 win_game()
                 break
             elif answer == "2":
-                os.system('cls' if os.name == 'nt' else 'clear')
+                clear_terminal()
                 story.room_seven_ending_4()
                 ending = "4"
                 game_over()
@@ -417,19 +435,12 @@ def room_seven():
                 story.incorrect()
 
 
-def punctuation_pause():
-    string = '.\n'
-    for char in string:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(1)
-
 def restart_game():
     story.restart_game()
     room_one()
 
 def win_game():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear_terminal()
     print(f"You got ending {ending} of 5")
     story.win_game()
 
@@ -447,17 +458,18 @@ def win_game():
 
 def game_over():
     print(f"You got ending {ending} of 5")
+    punctuation_pause()
     story.ask_to_restart_game()
 
     while True:
         answer = input("> ")
         if answer == "1":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.restart_game()
             restart_game()
             break
         elif answer == "2":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_terminal()
             story.not_start_game()
             game_over()
             break
