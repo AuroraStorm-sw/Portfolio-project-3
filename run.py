@@ -9,7 +9,6 @@ import sys
 Måndag:
 
 - Skriv README
-- Skriv DEAD endings
 """
 
 
@@ -275,7 +274,7 @@ def room_four_4():
         if answer == "1":
             clear_terminal()
             story.room_four_1()
-            ending = "'On point"'
+            ending = '"On point"'
             game_over()
             break
         elif answer == "2":
