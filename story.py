@@ -1,5 +1,7 @@
-# import time
+# Imports
+import time
 
+# Variables
 weapon = None
 attack = None
 rest = False
@@ -10,6 +12,9 @@ global name
 
 
 def incorrect():
+    """
+    Tell the player that an incorrect value has been entered as input
+    """
     print("Incorrect value")
     print("Please, enter a number corresponding with your choice")
 
@@ -19,47 +24,54 @@ def incorrect():
 
 
 def start_game():
-    # # time.sleep(1)
+    # time.sleep(1)
     print('\n"Ah, another subject".\n')
-    # # time.sleep(1)
+    # time.sleep(2)
     print('"Sorry, I mean player, of course."\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"Don\'t mind me".\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"She\'s waiting for you in her office."\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"Ready to go?"\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"Just type the number of your choice, ')
     print('and press Enter."\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print("1. Yes.")
     print("2. No.\n")
 
 
 def not_start_game():
     print('\n"No?"\n')
-    # # time.sleep(2)
+    time.sleep(2)
     print('"Shame."\n')
-    # # time.sleep(2)
+    time.sleep(2)
     print('"Well, then, I\'m making some tea."\n')
-    # # time.sleep(2)
+    time.sleep(2)
     print('"Care for a cup?"\n')
-    # # time.sleep(2)
+    time.sleep(2)
     print('"It\'s to die for."\n')
-    # # time.sleep(2)
-    print('"... No?\n"')
-    # # time.sleep(2)
+    time.sleep(2)
+    print('"... No?"\n')
+    time.sleep(2)
     print('"Rude."')
+    print("")
+    time.sleep(2)
+
+
+# """"""""""""""""""
+# " WELCOME SCREEN "
+# """"""""""""""""""
 
 
 def welcome():
     global name
 
     print('\n"Oh, hello there, I didn\'t see you."\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"Welcome, welcome! To our little game."\n')
-    # # time.sleep(2)
+    # time.sleep(2)
     print('"May I ask your name?"\n')
     while True:
         name = input("> ")
@@ -81,7 +93,7 @@ def welcome():
     # time.sleep(2)
     print('"Right?"\n')
     # time.sleep(2)
-    print('"Now, let us begin".\n')
+    print('"Now, let us begin."\n')
     # time.sleep(2)
     print('"Welcome, my dear, to the wonderful world of..."\n')
     # time.sleep(3)
@@ -163,7 +175,7 @@ def room_one_2():
 
 
 def room_two_text():
-    print("Looking around, you're in the middle of a long hallway, ")
+    print("\nLooking around, you're in the middle of a long hallway, ")
     print("both ends leading to different directions.\n")
     # time.sleep(3)
     print("After finding your breath, you get up on your feet, ")
@@ -199,6 +211,7 @@ def room_two_1():
     print("its sharp blade the last thing you see.\n")
     # time.sleep(3)
     print("Your death is swift and gruesome.\n")
+    # time.sleep(2)
 
 
 def room_two_2():
@@ -242,14 +255,14 @@ def room_three():
 
 def room_three_1():
     print("\nYou leap further down the corridor and miss the trapdoor ")
-    print("by barely a centimeter.\n")
+    # print("by barely a centimeter.\n")
     # time.sleep(4)
     print("Peering over the edge, the now open space drops into a maw ")
     print("of spikes, ready to impale anyone unfortunate enough to ")
     print("miss their chance.\n")
     # time.sleep(5)
     print('If not for your quick reflexes, that would\'ve been you.\n\n')
-    # time.sleep(3)
+    # time.sleep(2)
 
 
 def room_three_2():
@@ -262,6 +275,7 @@ def room_three_2():
     print("into a maw of spikes and the floor closes above you.\n")
     # time.sleep(3)
     print("Your death is slow and painful.\n")
+    # time.sleep(2)
 
 
 def room_three_3():
@@ -274,6 +288,7 @@ def room_three_3():
     print("Perhaps it's better this way.\n")
     # time.sleep(3)
     print("Your death is slow and painful.\n")
+    # time.sleep(2)
 
 # """"""""""""
 # " ROOM FOUR "
@@ -307,29 +322,30 @@ def room_four_text():
 def room_four_1():
     print("\nYou approach the door to the left and slowly open it, ")
     print("only to meet a brick wall.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print('"Great," you sigh, and as you turn to leave it, ')
     print("you hear a weird scraping sound.\n")
-    # time.sleep(5)
-    # print('Turn around in time to face a spear shooting out from the wall.\n')
-    # time.sleep(5)
+    # time.sleep(4)
+    print('Turn around in time to face a spear shooting out from the wall.\n')
+    # time.sleep(4)
     print("Your death is swift.\n")
+    # time.sleep(2)
 
 
 def room_four_2():
     print("\nYou approach the door to the right and peek through")
     print("the keyhole.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("There's light coming in from somewhere inside the room, ")
     print("and you slowly open it, entering a smaller reception ")
     print("room with another set of stairs.\n\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("A barred window faces a courtyard, and you swallow at the sight of")
     print("the courtyard leading to nothing but water.\n")
-    # time.sleep(5)
-    print("All you can see is sea or ocean, as if you're ")
-    print("stranded on an island, and hope falls.\n")
-    # time.sleep(5)
+    # time.sleep(4)
+    print("All you can see is sea or ocean, as if you're stranded")
+    print("on an island, and hope falls.\n")
+    # time.sleep(4)
     print("Is this it?\n")
     # time.sleep(2)
     print("No, you have to get out.")
@@ -341,11 +357,11 @@ def room_four_2():
 def room_four_3():
     print("\nYou approach the door ahead, and as you turn the handle, ")
     print("an uncanny 'click' reach your ears.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("With sweat beading on your forehead, you throw the door open ")
     # print("and jump aside just in time for a rain ")
     print("of arrows to fly past.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Shaking, you safely make it through the door and down ")
     print("a slim flight of stairs.\n\n")
 
@@ -385,28 +401,28 @@ def room_five_a():
     weapon = "vial"
     attack = "splash"
 
-    print("\nYou walk down the set of stairs and into what looks like a ")
+    print("\n\nYou walk down the set of stairs and into what looks like a ")
     print("chemistry lab.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Dimly lit with tables cluttered with needles, vials, jars, ")
     print("and all sorts of instruments.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("There aren't any ongoing experiments, though as you carefully ")
     print(f"rummage through the room, you spot a {weapon} with toxic-looking,")
     print("greenish content, and a warning label.")
-    # time.sleep(5)
+    # time.sleep(4)
     print("\nIt looks fragile, and there's some corrosion on the cap.\n")
     # time.sleep(3)
 
     print(f"\nDo you take the {weapon}?\n")
     print("1. Yes.")
-    print("2. No.")
+    print("2. No.\n")
 
 
 def room_five_a_1():
     print(f"\nYou gently pick the {weapon} up and study it, ")
     print("quickly realizing it could contain absolutely anything.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print('"Anything\'s better than nothing," you conclude, and')
     print("move on through the lab.\n")
     # time.sleep(3)
@@ -420,7 +436,7 @@ def room_five_a_2():
 
 
 def room_five_a_continuation():
-    print("\nLeaving the lab, you wander through more endless corridors ")
+    print("\n\nLeaving the lab, you wander through more endless corridors ")
     print("shifting around you as you proceed, so much that you might")
     print("be walking in circles and you wouldn't know.\n")
     # time.sleep(5)
@@ -431,7 +447,7 @@ def room_five_a_continuation():
 def room_five_a_rested():
     print("Thanks to the moment of rest from earlier, you're alert enough")
     print("to spot a contraption behind the door and dart out of ")
-    # print("the way just in time.\n")
+    print("the way just in time.\n")
     # time.sleep(5)
     print("A set of spears pierce the opposite wall in the hallway, ")
     print("and you quietly thank the armchair for its assistance.\n\n")
@@ -465,7 +481,7 @@ def room_five_b():
     weapon = "screwdriver"
     attack = "stab"
 
-    print("Down the stairs, you find yourself in another corridor ")
+    print("\nDown the stairs, you find yourself in another corridor ")
     print("snaking left to right.\n")
     # time.sleep(4)
     print("Knowing that death might come around any corner, you move slowly, ")
@@ -532,10 +548,10 @@ def room_five_b_not_rested():
     # time.sleep(5)
     print("Instantly, fire erupts from the wall, ")
     print("briefly engulfing your leg.\n")
-    # time.sleep(25)
+    # time.sleep(4)
     print("You tumble backward and pat the flames out, ")
     print("cursing your crippled state.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("With all the focus you can muster, you finally spot")
     print("a slight height difference in the tiles and manages a safe, ")
     print("albeit painful, journey across the room toward the door.\n")
@@ -553,7 +569,7 @@ def room_five_b_weapon():
 
 def room_five_b_weapon_1():
     global weapon
-    print(f"Carefully, you ease the object out - it's a {weapon}.\n")
+    print(f"\nCarefully, you ease the object out - it's a {weapon}.\n")
     # time.sleep(3)
     print("Handy.\n")
     # time.sleep(3)
@@ -574,11 +590,11 @@ def room_five_b_weapon_2():
 
 
 def room_six():
-    print("\nPushing forward, your main destination is downward as there must")
+    print("\n\nPushing forward, your main destination is downward as there must")
     print("be a door somewhere to leave this horrendous place, ")
-    print("but as you tread down the hallway, ")
-    print("you hear footsteps coming your way.\n")
-    # time.sleep(5)
+    print("but as you tread down the hallway, you hear footsteps")
+    print("coming your way.\n")
+    # time.sleep(4)
     print("What do you do?\n")
     # time.sleep(3)
 
@@ -589,29 +605,29 @@ def room_six():
 def room_six_1():
     print("You spin on your heels and bolt the other way, only to slam ")
     print("against a wall where there was a door moments ago.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Panicking, you turn to run back again but are stopped in your ")
     print("tracks as a figure rushes your way.\n")
-    # time.sleep(5)
-    # print('"Another civilian?" you assume, but you don\'t get the time to ask')
+    # time.sleep(4)
+    print('"Another civilian?" you assume, but you don\'t get the time to ask')
     print("as following them is another figure - one dressed in")
     print("black wearing a bowler hat.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("You ease up against the wall without escape and yelp in ")
     print("surprise when the floor disappears beneath your feet.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("At least you didn't leave the world alone.\n")
     # time.sleep(3)
 
 
 def room_six_2():
-    # print("\nYou hurry behind the old-timey piece of furniture and hold ")
+    print("\nYou hurry behind the old-timey piece of furniture and hold ")
     print("your breath as the footsteps come closer.\n")
     # time.sleep(4)
     print("The pace is quick as if they're running, and you stare in shock ")
     print("as another civilian dashes past you toward the room you ")
     print("just came from.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print('"I\'m not alone," you conclude and hold back from following ')
     print("the person as another set of footsteps follow.\n")
     # time.sleep(4)
@@ -638,9 +654,9 @@ def room_six_2():
 def room_seven():
     global ending
 
-    print("\nFinally, you make it to the bottom floor and, even better, ")
+    print("\n\nFinally, you make it to the bottom floor and, even better, ")
     print("the front door!\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Eager to escape this nightmare, you hurry across the room, ")
     print("only to freeze when footsteps echo behind you.\n")
     # time.sleep(2)
@@ -663,16 +679,18 @@ def room_seven():
 
 
 def room_seven_ending_1():
+    print("\n\nFinally, you make it to the bottom floor and, even better, ")
+    print("the front door!\n")
     print("You bolt towards the exit and pull the door, ")
     print("but it's padlocked.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print(f"As Holmes slowly approaches, you pull the {weapon} ")
     print(f"and {attack} it.")
-    # time.sleep(5)
+    # time.sleep(4)
     print("\nWith luck on your side for once, you get the door ")
     print("open, and run as fast as your legs can carry you ")
     print("across the courtyard.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Never looking back, you run until you find a dock and ")
     print("a small boat and leap onto it.\n")
     # time.sleep(3)
@@ -681,40 +699,39 @@ def room_seven_ending_1():
 def room_seven_ending_2():
     print("High on adrenaline, you launch yourself at Holmes with")
     print("enough strength that he stumbles backward,")
-    print("giving you a perfect option to strike ")
-    print(f"him with the {weapon}.")
-    # time.sleep(5)
+    print("giving you a perfect option to strike him with")
+    print(f"the {weapon}.\n")
+    # time.sleep(4)
     print("The sound of his screams makes you nauseous as ")
-    print(f"you {attack} him")
-    print("until it's too much for him to bare, ")
-    print("and he collapses onto the floor.\n")
-    # time.sleep(5)
+    print(f"you {attack} him until it's too much for him")
+    print("to bare, and he collapses onto the floor.\n")
+    # time.sleep(4)
     print('"I\'m never reading another book about you," you ')
     print("conclude in adrenaline-induced confusion and don't ")
     print("bother checking his body; instead, you ")
     print("rush to the door.")
-    # time.sleep(5)
+    # time.sleep(4)
     print("\nWith luck on your side for once, you get the door ")
     print("open, and run as fast as your legs can carry you ")
     print("across the courtyard.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Never looking back, you run until you find a dock and ")
     print("a small boat and leap onto it.\n")
     # time.sleep(3)
 
 
 def room_seven_injury():
-    print("Slowly, hindered by your wound, you make it downstairs.")
+    print("\n\nSlowly, hindered by your wound, you make it downstairs.")
     print("Though, even the pain doesn't dampen the relief ")
     print("of seeing the entrance.")
-    # time.sleep(5)
+    # time.sleep(4)
     print("You limp towards the exit, but the injury holds you back, ")
     print("and you don't reach the door before you're caught.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print(f"Pulling out the {weapon}, you make one final attempt  ")
     print(f"at your freedom and {attack} Holmes, hitting him")
     print("across the face.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("You watch in terror as the man recoils.\n\n")
     print('"Now is my chance."\n')
     # time.sleep(3)
@@ -730,15 +747,15 @@ def room_seven_ending_3():
 
     print("You continue toward the exit and pull the door, ")
     print("but it's padlocked.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("With all your might and adrenaline, you use the ")
-    print(f"{weapon} to force the padlock open ")
-    print("and rush out the open door.\n")
-    # time.sleep(5)
+    print(f"{weapon} to force the padlock open and rush out")
+    print("the open door.\n")
+    # time.sleep(4)
     print("As pain rips through your leg, you force every ")
     print("ounce of energy into running, wanting nothing")
     print("but to escape this horrible place.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Never looking back, you run until you find a dock ")
     print("and a small boat and stumble onto it.\n")
     # time.sleep(3)
@@ -748,40 +765,45 @@ def room_seven_ending_4():
     print("High on adrenaline, you launch yourself at Holmes, ")
     print("but the injury steals so much energy that you ")
     print("don't have enough to get a final blow.\n")
-    # time.sleep(5)
-    print(f"The {weapon} is torn from your hand, and you ")
-    print("choke suddenly as Holmes strikes a cold, ")
-    print("metal object through your throat.\n")
-    # time.sleep(5)
+    # time.sleep(4)
+    print(f"The {weapon} is torn from your hand, and you choke")
+    print("suddenly as Holmes strikes a cold, metal object")
+    print(" through your throat.\n")
+    # time.sleep(4)
     print("Gasping and gurgling, you fall to the floor, ")
     print("just out of reach of your freedom.\n")
     # time.sleep(3)
 
 
 def room_seven_insta_death_no_injury():
+    print("\n\nFinally, you make it to the bottom floor and, even better, ")
+    print("the front door!\n")
     print("You bolt towards the exit and pull the door, ")
     print("but it's padlocked.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("With nothing to defend yourself or break the lock ")
     print("open, all you can do is watch in horror as")
     print("something shiny flashes by, and you choke ")
     print("suddenly as Holmes strikes a cold, metal object ")
     print("through your neck.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Gasping and gurgling, you fall to the floor, ")
     print("just out of reach of your freedom.\n")
     # time.sleep(3)
 
 
 def room_seven_insta_death_injury():
+    print("\n\nSlowly, hindered by your wound, you make it downstairs.")
+    print("Though, even the pain doesn't dampen the relief ")
+    print("of seeing the entrance.\n")
     print("You limp towards the exit, but the injury holds you back, ")
     print("and you don't reach the door before you're caught.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("With nothing to defend yourself, all you can do is ")
     print("watch in horror as something shiny flashes by, and you choke ")
     print("suddenly as Holmes strikes a cold, metal object ")
     print("through your neck.\n")
-    # time.sleep(5)
+    # time.sleep(4)
     print("Gasping and gurgling, you fall to the floor, ")
     print("just out of reach of your freedom.\n")
     # time.sleep(3)
@@ -812,10 +834,10 @@ def restart_game():
 def win_game():
     global name
 
-    print("With lady luck on your side, you tug the rope to the motor, ")
+    print("\nWith lady luck on your side, you tug the rope to the motor, ")
     print("and it whirs alive.\n")
     # time.sleep(3)
-    print("Eith no idea where you are, any place is better than here, ")
+    print("With no idea where you are, any place is better than here, ")
     print("so you set off across the water, ")
     print("certain that any destination is better than the Murder Castle.\n")
     print("And that you'll never read another true crime story.\n\n")
@@ -828,7 +850,7 @@ def win_game():
     # time.sleep(3)
     print("So, what's next?.\n")
     # time.sleep(3)
-    # print("Do you want another go, or is it time to leave?.\n")
+    print("Do you want another go, or is it time to leave?.\n")
     # time.sleep(3)
     print("1. Play again.")
-    # print("2. Time to leave.\n")
+    print("2. Time to leave.\n")

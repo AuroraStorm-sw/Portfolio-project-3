@@ -1,4 +1,4 @@
-# imports
+# Imports
 import story
 import pyfiglet
 import time
@@ -14,7 +14,6 @@ Måndag:
 
 
 # Variables
-
 weapon = None
 attack = None
 rest = False
@@ -34,7 +33,7 @@ def punctuation_pause():
     Adds 3 dots (...) where the paragraphs needs furter separation
     to show the story is moving forward
     """
-    string = '...\n'
+    string = '...'
     for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -57,11 +56,13 @@ def start_game():
     while True:
         answer = input("> ")
         if answer == "1":
+            # room_four()
             welcome()
             break
         elif answer == "2":
             clear_terminal()
             story.not_start_game()
+            time.sleep(2)
             punctuation_pause()
             print('\n"Let\'s try that again, shall we?"\n')
             punctuation_pause()
@@ -120,6 +121,7 @@ def room_one():
     The right choice will send them on to Room two, and the
     wrong one ends the game.
     """
+    global ending
     clear_terminal()
     story.room_one_text()
     while True:
@@ -132,6 +134,7 @@ def room_one():
         elif answer == "2":
             clear_terminal()
             story.room_one_2()
+            ending = "Dreamers Escape"
             game_over()
             break
         else:
@@ -144,11 +147,12 @@ def room_one():
 
 def room_two():
     """
-    Room two of the game where exploration starts and the 
+    Room two of the game where exploration starts and the
     options for what's right and wrong get more unclear.
     The right choice will send them on to Room three, and the
     wrong one ends the game.
     """
+    global ending
     punctuation_pause()
     story.room_two_text()
     while True:
@@ -156,6 +160,7 @@ def room_two():
         if answer == "1":
             clear_terminal()
             story.room_two_1()
+            ending = ""
             game_over()
             break
         elif answer == "2":
@@ -179,6 +184,7 @@ def room_three():
     One right choice will send them on to Room four, and the
     other ones ends the game.
     """
+    global ending
     punctuation_pause()
     story.room_three()
     while True:
@@ -191,11 +197,13 @@ def room_three():
         elif answer == "2":
             clear_terminal()
             story.room_three_2()
+            ending = "Straight to the point"
             game_over()
             break
         elif answer == "3":
             clear_terminal()
             story.room_three_3()
+            ending = "Let's forget this one"
             game_over()
             break
         else:
@@ -218,6 +226,7 @@ def room_four():
     Here, the player will end up in either Room five a
     or Room five b.
     """
+    global ending
     punctuation_pause()
     story.room_four_text()
 
@@ -226,6 +235,7 @@ def room_four():
         if answer == "1":
             clear_terminal()
             story.room_four_1()
+            ending = "On point"
             game_over()
             break
         elif answer == "2":
@@ -254,6 +264,7 @@ def room_four_4():
     options as previous, now with a rest buff 
     added.
     """
+    global ending
     global rest
     rest = True
 
@@ -264,6 +275,7 @@ def room_four_4():
         if answer == "1":
             clear_terminal()
             story.room_four_1()
+            ending = "On point"
             game_over()
             break
         elif answer == "2":
@@ -329,11 +341,9 @@ def room_five_a():
 
     if rest:
         story.room_five_a_rested()
-        punctuation_pause()
     else:
         story.room_five_a_not_rested()
         injury = True
-        punctuation_pause()
     room_six()
 
 
@@ -382,8 +392,7 @@ def room_five_b():
         story.room_five_b_rested()
     else:
         story.room_five_b_not_rested()
-
-    injury = True
+        injury = True
 
     story.room_five_b_weapon()
 
@@ -406,19 +415,6 @@ def room_five_b():
 # # " ROOM SIX "
 # # """"""""""""""
 
-    """
-    Room five a where the player will find one of two weapons
-    in the game, and gets to decide whether they want to pick 
-    it up or not. Depending on what they choose, it will give them
-    a different ending if they reach the end of the game.
-
-    No matter if they pick up the weapon or not, they'll move on
-    to Room six.
-
-    There's also a section of the room where the player will either
-    get injuried or not, depending on if they rested earlier, 
-    which will also affect the end of the game.
-    """
 
 def room_six():
     """
@@ -428,6 +424,8 @@ def room_six():
     One right choice will send them on to Room seven, and the
     other ones ends the game.
     """
+    global ending
+    punctuation_pause()
     story.room_six()
 
     while True:
@@ -435,6 +433,7 @@ def room_six():
         if answer == "1":
             clear_terminal()
             story.room_six_1()
+            ending = "Together in the end"
             game_over()
             break
         elif answer == "2":
@@ -458,6 +457,8 @@ def room_seven():
     """
     global ending
 
+    punctuation_pause()
+
     if injury is False and weapon is True:
         story.room_seven()
         while True:
@@ -465,13 +466,13 @@ def room_seven():
             if answer == "1":
                 clear_terminal()
                 story.room_seven_ending_1()
-                ending = "1"
+                ending = "Energized Escapee"
                 win_game()
                 break
             elif answer == "2":
                 clear_terminal()
                 story.room_seven_ending_2()
-                ending = "2"
+                ending = "Bloodied Escapee"
                 win_game()
                 break
             else:
@@ -484,28 +485,28 @@ def room_seven():
             if answer == "1":
                 clear_terminal()
                 story.room_seven_ending_3()
-                ending = "3"
+                ending = "Beaten but Determined"
                 win_game()
                 break
             elif answer == "2":
                 clear_terminal()
                 story.room_seven_ending_4()
-                ending = "4"
+                ending = "Overly Enthusiastic"
                 game_over()
                 break
             else:
                 story.incorrect()
 
     if injury is False and weapon is False:
-        clear_terminal()
+        # clear_terminal()
         story.room_seven_insta_death_no_injury()
-        ending = "5"
+        ending = "Trapped Rat"
         game_over()
 
     if injury is True and weapon is False:
         clear_terminal()
         story.room_seven_insta_death_injury()
-        ending = "6"
+        ending = "Wounded and lost"
         game_over()
 
 
@@ -524,14 +525,13 @@ def win_game():
     Function for when the player wins the game, also offers
     the option to restart and play another game.
     """
-    # print(f"You got ending {ending} of 6\n")
+    print(f"You got ending {ending} of 6\n")
     punctuation_pause()
     story.win_game()
 
     while True:
         answer = input("> ")
         if answer == "1":
-            story.restart_game()
             punctuation_pause()
             restart_game()
         else:
@@ -544,9 +544,9 @@ def game_over():
     for them to restart the game and will send them back
     to Room one, otherwise they'll return to the startscreen.
     """
+    print(f"You got the {ending} ending.\n")
     punctuation_pause()
     story.ask_to_restart_game()
-    # print(f"You got ending {ending} of 6\n")
     while True:
         answer = input("> ")
         if answer == "1":
