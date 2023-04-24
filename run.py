@@ -43,7 +43,7 @@ def punctuation_pause():
 def start_game():
     """
     Starts the game off with an ASCII welcome message
-    where the player gets to descide whether they 
+    where the player gets to descide whether they
     chose to start the game or not, also explaining
     how picking choices work.
     Chosing not to sends them back to the start where
@@ -217,9 +217,9 @@ def room_three():
 
 def room_four():
     """
-    Room four of the game where the player is 
+    Room four of the game where the player is
     introduced to 4 different choices.
-    If the player choses to rest, this will add 
+    If the player choses to rest, this will add
     a buff for later in the game where they'll avoid
     getting injuried.
 
@@ -259,9 +259,9 @@ def room_four():
 
 def room_four_4():
     """
-    The rest-option from Room four, from here 
+    The rest-option from Room four, from here
     the player get to choose from the same
-    options as previous, now with a rest buff 
+    options as previous, now with a rest buff
     added.
     """
     global ending
@@ -302,7 +302,7 @@ def room_four_4():
 def room_five_a():
     """
     Room five a where the player will find one of two weapons
-    in the game, and gets to decide whether they want to pick 
+    in the game, and gets to decide whether they want to pick
     it up or not. Depending on what they choose, it will give them
     a different ending if they reach the end of the game.
 
@@ -310,7 +310,7 @@ def room_five_a():
     to Room six.
 
     There's also a section of the room where the player will either
-    get injuried or not, depending on if they rested earlier, 
+    get injuried or not, depending on if they rested earlier,
     which will also affect the end of the game.
     """
     global injury
@@ -355,7 +355,7 @@ def room_five_a():
 def room_five_b():
     """
     Room five b where the player will find one of two weapons
-    in the game, and gets to decide whether they want to pick 
+    in the game, and gets to decide whether they want to pick
     it up or not. Depending on what they choose, it will give them
     a different ending if they reach the end of the game.
 
@@ -363,7 +363,7 @@ def room_five_b():
     to Room six.
 
     There's also a section of the room where the player will either
-    get injuried or not, depending on if they rested earlier, 
+    get injuried or not, depending on if they rested earlier,
     which will also affect the end of the game.
     """
     global ending
@@ -421,7 +421,7 @@ def room_five_b():
 def room_six():
     """
     Room six of the game, same premise as previous rooms, with
-    two options leading to a new discovery, though one leads 
+    two options leading to a new discovery, though one leads
     further to death.
     One right choice will send them on to Room seven, and the
     other ones ends the game.
@@ -515,7 +515,7 @@ def room_seven():
 def restart_game():
     """
     Function to restart the game whenever the
-    player dies. Gives the player the option to 
+    player dies. Gives the player the option to
     restart or not.
     Also resets the rest and injury variables so
     they don't remain when the game is replayed
