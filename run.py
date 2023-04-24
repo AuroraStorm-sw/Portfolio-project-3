@@ -541,6 +541,7 @@ def win_game():
         if answer == "1":
             punctuation_pause()
             restart_game()
+            clear_terminal()
         else:
             start_game()
 

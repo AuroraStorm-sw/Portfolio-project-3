@@ -8,6 +8,7 @@ Throughout the game, there are multiple choices leading either to death or survi
 
 As a true crime enthusiast, the idea came naturally, and creating all the rooms with this as inspiration was highly enjoyable.
 
+You can find the (deployed version here)[https://murder-castle-adventure.herokuapp.com/]
 
 - [UX](#ux)
     - [User goals](#user-goals)
@@ -53,9 +54,17 @@ The outline of the game was made with the help of [Ludichart](https://www.lucidc
 
 # Features
 
-- The app is built with a total of 8 different rooms. 
-- There room 1-4 then 5a and 5b depending on where the player chooses to go from room 4, followed by room 6 and 7.
-- There's a total of 6 different endings depending on your choices
+![Intro]()
+![room-three]()
+![room-four]()
+![room-seven]()
+![death]()
+
+- The app is built with a total of 8 different rooms.
+- Each room presents different options for where to proceed, some sending the player to another room and other to the players death.
+- There's room 1-4 then 5a and 5b depending on where the player chooses to go from room 4, followed by room 6 and 7.
+- How the game ends depends entirely on the players choices throughout the game.
+- Each different death and win has its own titled ending.
 
 
 # Features Left To Implement
@@ -65,3 +74,101 @@ The outline of the game was made with the help of [Ludichart](https://www.lucidc
 # Testing
 
 ## Validator testing
+
+Code validation done via [PEP8](https://pep8ci.herokuapp.com/)
+
+The following errors have been corrected:
+- Lines too long
+- Missing blank lines between functions
+- Trailing white space
+- Expected two lines between functions but only found one
+
+![pep8-run.py](documentation/pep8-run.PNG)
+![pep8-story.py](documentation/pep8-story.PNG)
+
+## Lighthouse
+
+Lighthouse report done via Google Chrome Devtools.
+![Lighthouse](documentation/lighthouse.PNG)
+
+## Manual Testing
+
+I have manually tested the game by:
+- Entering incorrect input to ensure the app doesn't crash
+- Played through the game for all different endings and ensured they are correctly aligned
+- Had a friend play through the game to have a fresh set of eyes
+
+| Action        | Expected Behavior     | Actual Behavior |
+|--------------|:-----------:|------------:|
+| Load the game | The intro page shows up and renders fully | Pass  |
+| Name input | Enters name and throws an error when the name includes an integer, and the name is the same throughout the game. The name also remains when replaying the game instead of restarting | Pass  |
+| Choose different options to reach different areas | Each choice leads to a different room or ending, not throwing any errors or leading to the same ending or room | Pass |
+| Choose rest | When chosing to rest in room four, the rest buff remains with the player throughout the game and affects the ending | Pass |
+| Choose a weapon | When the player chooses a weapon, it remains with the player throughout the game and affects the ending | Pass |
+| Losing the game | When losing, the player will get a custom ending depending on how the game was lost and then given the option to restart the game | Pass |
+| Restarting the game | When restarting, the rest and weapon variables reset so the player can pick new choices, the player also restarts the game from Room One rather than from the intro screen | Pass
+| Quit the game | When quitting the game, the player will be sent back to the start | Pass
+
+# Bugs
+
+## Fixed bugs
+
+Throughout building the app I had several bugs regarding linking together rooms and not getting confused by which story section belongs where.
+This was a continuous process of handling while building the app.
+
+Same thing went for different endings depending on what choices the user did, so to puzzle everything together and not get the incorrect ending or outcome and ensure that each buff got activated where it was supposed to and that it sticks throughout the game.
+
+While testing, it was discovered that the buffs remained when restarting the game because the restart_game function didn't include a way to reset them. This was fixed by giving the weapon and rest variables "None" in the restart_game function, and the issue was solved.
+
+## Deployment
+
+This project was deployed via GitHub Pages and Heroku used as a development environment. From GitHub, I could commit and push my changes throughout the project that automatically got added to the project linked in Heroku.
+
+Steps I took to deploy my website;
+
+- Go to the repository for  Portfolio-project-2
+- Click the Settings tab and locate the Pages tab
+- Select to deploy from main branch
+- A few minutes later, upon refreshing the page, my site was live
+
+For anyone wishing to Fork this repository, then do as follows;
+
+- Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
+- Up in the right corner of the repository page, on the row of buttons just beneath the user icon, you'll find the "Fork" button.
+- Click the "Fork" button, and you will now have created a copy of the repository to your GitHub account.
+
+To clone this repository, then do as follows;
+
+- Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
+- Click the "<> Code" button in the upper right above the files
+- Copy the link
+- Open Gitpod and from there, select which directory you want the clone to be created into.
+- Type in "git clone" in your Gitpod terminal and paste the link copied from GitHub, and the close will be created.
+
+# Tools and programs
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [GitHub](https://github.com/)
+- [Gitpod](https://gitpod.io/)
+- [Heroku](https://gitpod.io/)
+- [Lucidchart](https://www.lucidchart.com/)
+- [PEP8](https://pep8ci.herokuapp.com/)
+
+-[Compress video](https://www.freeconvert.com/video-compressor/)
+
+## Modules
+- [time](https://docs.python.org/3/library/time.html#time.sleep)
+- [os](https://docs.python.org/3/library/os.html?highlight=os#module-os)
+- [sys](https://docs.python.org/3/library/sys.html?highlight=sys#module-sys)
+- [pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/)
+
+ # Credits
+
+- How to clear the terminal for the "clear_terminal" function: (Stackoverflow)[https://stackoverflow.com/questions/2084508/clear-terminal-in-python]
+- How to write out one character at a time for the "punctuation_pause" function: (Stackoverflow)[https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line]
+- How to check if a user input is a string for entering their name: (Stackoverflow)[https://stackoverflow.com/questions/48054241/how-to-check-if-user-input-is-a-string]
+- How to use ASCII art: (GeeksForGeeks)[https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/]
+
+## Inspiration
+Inspiration for how to build my game has been drawn from many different students on Code Institute by looking at their submitted projects and projects up for review. Examples of inspiration comes from [miriampayne](https://github.com/miriampayne/walkers-text-adventure), [wallacezone](https://github.com/wallacezone/little-dungeon/blob/master/little-dungeon.py), and [JamesFahey](https://github.com/JamesFahey/zombie-survival).
+
+Throughout the project, I've searched for answers for minor and major issues on [Stackoverflow](https://stackoverflow.com/)

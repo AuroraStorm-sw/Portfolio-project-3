@@ -34,7 +34,7 @@ def start_game():
     time.sleep(2)
     print('"Sorry, I mean player, of course."\n')
     time.sleep(2)
-    print('"Don\'t mind me".\n')
+    print('"Don\'t mind me."\n')
     time.sleep(2)
     print('"She\'s waiting for you in her office."\n')
     time.sleep(2)
@@ -67,7 +67,6 @@ def not_start_game():
     time.sleep(2)
     print('"Rude."')
     print("")
-    time.sleep(2)
 
 
 # """"""""""""""""""
@@ -86,7 +85,7 @@ def welcome():
 
     global name
 
-    print('\n"Oh, hello there, I didn\'t see you."\n')
+    print('\n\n"Oh, hello there, I didn\'t see you."\n')
     time.sleep(2)
     print('"Welcome, welcome! To our little game."\n')
     time.sleep(2)
@@ -179,7 +178,7 @@ def room_one_text():
 
 def room_one_1():
     """
-    If the player chooses option 1 in 
+    If the player chooses option 1 in
     Room one when prompted
     """
 
@@ -190,13 +189,13 @@ def room_one_1():
     print("reveals itself.\n")
     time.sleep(4)
     print("You throw yourself out of the space and land on a plush red ")
-    print("carpet, coughing and wheezing.\n\n")
+    print("carpet, coughing and wheezing.\n")
     time.sleep(4)
 
 
 def room_one_2():
     """
-    If the player chooses option 2 in 
+    If the player chooses option 2 in
     Room two when prompted
     """
 
@@ -216,7 +215,7 @@ def room_two_text():
     Introduction text to Room two
     """
 
-    print("\nLooking around, you're in the middle of a long hallway, ")
+    print("\n\nLooking around, you're in the middle of a long hallway, ")
     print("both ends leading to different directions.\n")
     time.sleep(3)
     print("After finding your breath, you get up on your feet, ")
@@ -241,7 +240,7 @@ def room_two_text():
 
 def room_two_1():
     """
-    If the player chooses option 1 in 
+    If the player chooses option 1 in
     Room two when prompted
     """
 
@@ -288,7 +287,7 @@ def room_three():
     Introduction text to Room three
     """
 
-    print("\nThe corridor turns and twists.\n")
+    print("\n\nThe corridor turns and twists.\n")
     time.sleep(3)
     print("Walls, and floors in similar red shades making the narrow ")
     print("hallways disorienting even though there's only one way.\n")
@@ -310,7 +309,7 @@ def room_three():
 
 def room_three_1():
     """
-    If the player chooses option 1 in 
+    If the player chooses option 1 in
     Room three when prompted
     """
 
@@ -321,13 +320,13 @@ def room_three_1():
     print("of spikes, ready to impale anyone unfortunate enough to ")
     print("miss their chance.\n")
     time.sleep(5)
-    print('If not for your quick reflexes, that would\'ve been you.\n\n')
+    print('If not for your quick reflexes, that would\'ve been you.\n')
     time.sleep(2)
 
 
 def room_three_2():
     """
-    If the player chooses option 2 in 
+    If the player chooses option 2 in
     Room three when prompted
     """
 
@@ -345,7 +344,7 @@ def room_three_2():
 
 def room_three_3():
     """
-    If the player chooses option 3 in 
+    If the player chooses option 3 in
     Room three when prompted
     """
 
@@ -372,7 +371,7 @@ def room_four_text():
     gives the player a buff for the game finale.
     """
 
-    print('\n"This reminds me of the Murder Castle," you think as you ')
+    print('\n\n"This reminds me of the Murder Castle," you think as you ')
     print("cautiously walk down a curved flight of stairs, each")
     print("move soft and careful as you tread each step.\n")
     time.sleep(5)
@@ -397,7 +396,7 @@ def room_four_text():
 
 def room_four_1():
     """
-    If the player chooses option 1 in 
+    If the player chooses option 1 in
     Room four when prompted
     """
 
@@ -415,7 +414,7 @@ def room_four_1():
 
 def room_four_2():
     """
-    If the player chooses option 2 in 
+    If the player chooses option 2 in
     Room four when prompted
     """
 
@@ -434,7 +433,7 @@ def room_four_2():
     time.sleep(4)
     print("Is this it?\n")
     time.sleep(2)
-    print("No, you have to get out.")
+    print("No, you have to get out.\n")
     time.sleep(2)
     print("Someone brought you inside, and you will find out how.\n")
     print("Confused and mildly panicked, you must push forward!\n\n")
@@ -442,7 +441,7 @@ def room_four_2():
 
 def room_four_3():
     """
-    If the player chooses option 3 in 
+    If the player chooses option 3 in
     Room four when prompted
     """
 
@@ -459,7 +458,7 @@ def room_four_3():
 
 def room_four_4_rest():
     """
-    If the player chooses option 4 in 
+    If the player chooses option 4 in
     Room four when prompted
     """
 
@@ -549,10 +548,10 @@ def room_five_a_2():
 
 def room_five_a_continuation():
     """
-    Room fiva A text for when after making a 
+    Room fiva A text for when after making a
     choice about picking up the weapon or not.
     """
-    
+
     print("\n\nLeaving the lab, you wander through more endless corridors ")
     print("shifting around you as you proceed, so much that you might")
     print("be walking in circles and you wouldn't know.\n")
@@ -593,7 +592,7 @@ def room_five_a_not_rested():
     time.sleep(5)
     print("Hobbling, you catch yourself on the wall to assess the damage,")
     print("concluding it's unlikely to be lethal, but cripples")
-    print("your speed.\n\n")
+    print("your speed.\n")
     time.sleep(3)
 
 
@@ -640,7 +639,7 @@ def room_five_b():
 
 def room_five_b_1():
     """
-    If the player chooses option 1 in 
+    If the player chooses option 1 in
     Room five B when prompted
     """
 
@@ -658,7 +657,7 @@ def room_five_b_1():
 
 def room_five_b_2():
     """
-    If the player chooses option 2 in 
+    If the player chooses option 2 in
     Room five B when prompted
     """
 
@@ -684,7 +683,7 @@ def room_five_b_rested():
     print("slightest height difference.\n")
     time.sleep(5)
     print("Thanks to your rest, you make it safetly across, and")
-    print("quietly thank the armchair for its assistance.\n\n")
+    print("quietly thank the armchair for its assistance.\n")
     time.sleep(3)
 
 
@@ -743,7 +742,7 @@ def room_five_b_weapon_1():
 
 def room_five_b_weapon_2():
     """
-    If the player chooses option 2 to not 
+    If the player chooses option 2 to not
     pick up the weapon
     """
 
@@ -825,7 +824,7 @@ def room_six_2():
     time.sleep(4)
     print("Only when they've both disappeared do you dare move and ")
     print("hurry in the opposite direction, as gut-wrenching screams ")
-    print("echo behind you.\n\n")
+    print("echo behind you.\n")
     time.sleep(3)
 
 
@@ -838,7 +837,7 @@ def room_seven():
     Introduction to Room seven, the final room,
     if the player rested in Room four
     """
-    
+
     global ending
 
     print("\n\nFinally, you make it to the bottom floor and, even better, ")
@@ -1039,7 +1038,7 @@ def room_seven_insta_death_injury():
 
 def ask_to_restart_game():
     """
-    Introduction to restarting the game, 
+    Introduction to restarting the game,
     asking the player if they want to restart
     """
 
@@ -1076,7 +1075,7 @@ def win_game():
 
     global name
 
-    print("\nWith lady luck on your side, you tug the rope to the motor, ")
+    print("\n\nWith lady luck on your side, you tug the rope to the motor, ")
     print("and it whirs alive.\n")
     time.sleep(3)
     print("With no idea where you are, any place is better than here, ")
@@ -1084,15 +1083,15 @@ def win_game():
     print("certain that any destination is better than the Murder Castle.\n")
     print("And that you'll never read another true crime story.\n\n")
     time.sleep(6)
-    print("Well, well, well, look at that!\n")
+    print('\n"Well, well, well, look at that!"\n')
     time.sleep(3)
-    print(f"Marvelous work, {name}, you made it out alive.\n")
+    print(f'"Marvelous work, {name}, you made it out alive.\n"')
     time.sleep(3)
-    print("I knew you had it in you.\n")
+    print('"I knew you had it in you."\n')
     time.sleep(3)
-    print("So, what's next?\n")
+    print('"So, what\'s next?"\n')
     time.sleep(3)
-    print("Do you want another go, or is it time to leave?.\n")
+    print('"Do you want another go, or is it time to leave?"\n')
     time.sleep(3)
     print("1. Play again.")
     print("2. Time to leave.\n")
