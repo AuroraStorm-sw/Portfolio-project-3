@@ -278,6 +278,8 @@ def room_four_4():
 
 def room_five_a():
 
+    print(rest)
+
     global injury
     global weapon
     global attack
@@ -323,6 +325,8 @@ def room_five_a():
 
 
 def room_five_b():
+
+    print(rest)
 
     global injury
     global weapon
@@ -404,7 +408,7 @@ def room_seven():
 
     print("Room seven")
 
-    if not injury and weapon:
+    if injury is False and weapon is True:
         story.room_seven()
         while True:
             answer = input("> ")
@@ -423,7 +427,7 @@ def room_seven():
             else:
                 story.incorrect()
 
-    if injury and weapon:
+    if injury is True and weapon is True:
         story.room_seven_injury()
         while True:
             answer = input("> ")
@@ -439,17 +443,17 @@ def room_seven():
                 break
             else:
                 story.incorrect()
-                
-    if not injury and not weapon:
-        # clear_terminal()
-        story.room_seven_insta_death_no_injury()
-        ending = "5"
-        game_over()
 
-    if injury and not weapon:
+    if injury is True and weapon is False:
         # clear_terminal()
         story.room_seven_insta_death_injury()
         ending = "6"
+        game_over()
+
+    if injury is False and weapon is False:
+        # clear_terminal()
+        story.room_seven_insta_death_no_injury()
+        ending = "5"
         game_over()
 
 def restart_game():
@@ -474,7 +478,7 @@ def win_game():
 
 
 def game_over():
-    print(f"You got ending {ending} of 5")
+    print(f"You got ending {ending} of 6")
     punctuation_pause()
     story.ask_to_restart_game()
 
