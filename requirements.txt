@@ -1,2 +1,1 @@
-# Your requirements go here
-pip freeze
+pyfiglet==0.8.post1
