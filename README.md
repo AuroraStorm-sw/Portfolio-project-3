@@ -1,14 +1,19 @@
 # THE MURDER CASTLE
 
+![Title](documentation/mc-big-title.PNG)
+
 This Python-based text based adventure game is loosely based on the history of H. H Holmes, a serial killer from America that allegedly clamed at least 27 lives in his [Murder Castle](https://www.history.com/topics/crime/murder-castle#section_2). 
 I first learned about this case by [The Poisoner's Cabinet podcast](https://www.youtube.com/watch?v=y90seA7T9GU).
-I've also taken inspiration from the [video game](https://en.wikipedia.org/wiki/The_Dark_Pictures_Anthology:_The_Devil_in_Me) "The Dark Pictures Anthology: The Devil in Me" by Supermassive Games.
+I've also taken inspiration from the video game ["The Dark Pictures Anthology: The Devil in Me"](https://en.wikipedia.org/wiki/The_Dark_Pictures_Anthology:_The_Devil_in_Me) by Supermassive Games.
 
 Throughout the game, there are multiple choices leading either to death or survival, and depending on what choices you make along the way, your chance of escaping the Murder Castle increases. Or decreases.
 
+There's also inspiratio taken from the very popular trope "Transported into a novel", where the protagonist wakes up inside a book. This is usally reserved for fantasy and action, so I gave it a bit of a twist.
+
 As a true crime enthusiast, the idea came naturally, and creating all the rooms with this as inspiration was highly enjoyable.
 
-You can find the (deployed version here)[https://murder-castle-adventure.herokuapp.com/]
+You can find the [deployed version here](https://murder-castle-adventure.herokuapp.com/)
+# 
 
 - [UX](#ux)
     - [User goals](#user-goals)
@@ -52,13 +57,23 @@ The outline of the game was made with the help of [Ludichart](https://www.lucidc
 ![Ludichart1](documentation/ludichart_1.PNG)
 ![Ludichart1](documentation/ludichart_2.PNG)
 
+# Design
+
+The design in regard for a text based game I'm interpreting as both ASCII art, the text layout, as well as the mood.
+
+My hopes when writing the game is provide an interesting story, so I've tried to supply the player with text in a speed that's not too rushed but simultaniously not boring, so the tension of the game isn't lost.
+The text is provided in small chunks not to make the terminal messy and to allow the player to read more easily. I've added terminal clearing where I found suitable and with the help of a friend to make the text sections less confusing.
+
+For the mood of the game I wanted to add both mystery with a touch of humor. The game is challenging in that it's easy to die, so I added named titles to every type of death (and win) to offer a bit of fun. 
+
 # Features
 
-![Intro]()
-![room-three]()
-![room-four]()
-![room-seven]()
-![death]()
+![Intro](documentation/mc-intro-screen.PNG)
+![Title-screen](documentation/mc-title-screen.PNG)
+![room-three](documentation/mc-room-three.PNG)
+![room-four](documentation/mc-room-fourPNG.PNG)
+![room-seven](documentation/mc-escape.PNG)
+![death](documentation/mc-death.PNG)
 
 - The app is built with a total of 8 different rooms.
 - Each room presents different options for where to proceed, some sending the player to another room and other to the players death.
@@ -70,6 +85,7 @@ The outline of the game was made with the help of [Ludichart](https://www.lucidc
 # Features Left To Implement
 
 - Create a function that stores each ending the player have gotten, so that they can "collect" endings and get everyone, and adding a special price for getting every ending.
+- Add more ASCII art to the rooms to give them more personality
 
 # Testing
 
@@ -124,6 +140,8 @@ While testing, it was discovered that the buffs remained when restarting the gam
 
 This project was deployed via GitHub Pages and Heroku used as a development environment. From GitHub, I could commit and push my changes throughout the project that automatically got added to the project linked in Heroku.
 
+## Github
+
 Steps I took to deploy my website;
 
 - Go to the repository for  Portfolio-project-2
@@ -145,6 +163,16 @@ To clone this repository, then do as follows;
 - Open Gitpod and from there, select which directory you want the clone to be created into.
 - Type in "git clone" in your Gitpod terminal and paste the link copied from GitHub, and the close will be created.
 
+## Deploying the app in Heroku:
+This was done with the help of instructions from Code Institute, and goes as follows;
+
+- Log in to Heroku or create a new account
+- On the main page up near the top, click "New" and select "Create new app"
+- Pick your unique app name and select your region
+- Click the "Create App" button
+- On the next page, manover to the "Settings" tab and find "Config Vars"
+- Click "Reveal Config Vars" and add "Port" to key and "8000" to value, then click "Add"
+
 # Tools and programs
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 - [GitHub](https://github.com/)
@@ -152,8 +180,6 @@ To clone this repository, then do as follows;
 - [Heroku](https://gitpod.io/)
 - [Lucidchart](https://www.lucidchart.com/)
 - [PEP8](https://pep8ci.herokuapp.com/)
-
--[Compress video](https://www.freeconvert.com/video-compressor/)
 
 ## Modules
 - [time](https://docs.python.org/3/library/time.html#time.sleep)

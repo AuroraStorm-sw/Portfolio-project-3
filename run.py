@@ -21,6 +21,7 @@ ending = None
 
 
 def clear_terminal():
+    # Tutorial for os.system clearing via Stackoverflow, see README
     """
     Clears the terminal of text
     """
@@ -28,6 +29,7 @@ def clear_terminal():
 
 
 def punctuation_pause():
+    # Tutorial for delayd char printing via Stackoverflow, see README
     """
     Adds 3 dots (...) where the paragraphs needs furter separation
     to show the story is moving forward
@@ -48,6 +50,7 @@ def start_game():
     Chosing not to sends them back to the start where
     they can chose to start the game.
     """
+    # Tutorial for pyfiglet via GeeksforGeeks, see README
     result_1 = pyfiglet.figlet_format("Welcome in")
     print(result_1)
     story.start_game()
@@ -86,8 +89,7 @@ def welcome():
     result_2 = pyfiglet.figlet_format("Murder Castle")
     print(result_1, result_2)
 
-    punctuation_pause()
-
+    clear_terminal()
     intro()
 
 

@@ -28,6 +28,7 @@ def start_game():
     """
     Story for game start-up
     """
+    # Tutorial for time.sleep via Stackoverflow, see README
 
     time.sleep(1)
     print('\n"Ah, another subject".\n')
@@ -436,6 +437,7 @@ def room_four_2():
     print("No, you have to get out.\n")
     time.sleep(2)
     print("Someone brought you inside, and you will find out how.\n")
+    time.sleep(2)
     print("Confused and mildly panicked, you must push forward!\n\n")
 
 
@@ -821,7 +823,7 @@ def room_six_2():
     print("Still as a statue, you watch a darkly dressed figure stride past, ")
     print("cane in hand and bowler hat on their head.\n")
     print("Same as the portrait. \n")
-    time.sleep(4)
+    time.sleep(3)
     print("Only when they've both disappeared do you dare move and ")
     print("hurry in the opposite direction, as gut-wrenching screams ")
     print("echo behind you.\n")
@@ -1072,20 +1074,21 @@ def win_game():
     When the player wins the game, gives an option
     to restart another game or not
     """
-
+    
     global name
 
     print("\n\nWith lady luck on your side, you tug the rope to the motor, ")
     print("and it whirs alive.\n")
     time.sleep(3)
-    print("With no idea where you are, any place is better than here, ")
-    print("so you set off across the water, ")
-    print("certain that any destination is better than the Murder Castle.\n")
+    print("With no idea where you are, any place is better than here,")
+    print("so you set off across the water, certain that any ")
+    print("destination is better than the Murder Castle.\n")
+    time.sleep(2)
     print("And that you'll never read another true crime story.\n\n")
     time.sleep(6)
     print('\n"Well, well, well, look at that!"\n')
     time.sleep(3)
-    print(f'"Marvelous work, {name}, you made it out alive.\n"')
+    print(f'"Marvelous work, {name}, you made it out alive."\n')
     time.sleep(3)
     print('"I knew you had it in you."\n')
     time.sleep(3)
