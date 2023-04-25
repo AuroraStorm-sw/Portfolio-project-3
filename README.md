@@ -21,7 +21,6 @@ You can find the [deployed version here](https://murder-castle-adventure.herokua
         - [As a website owner](#as-a-website-owner)
 - [Flowshart](#flowshart)
 - [Designs](#designs)
-    - [ASCII](#ascii)
 - [Features](#features)
     - [Features left to implement](#features-left-to-implement)
 - [Testing](#testing)
@@ -38,7 +37,7 @@ You can find the [deployed version here](https://murder-castle-adventure.herokua
 - Anyone with an interest in true crime who enjoy gaming
 
 ## User goals
-- To play and enjoy a text-based game
+- To play and enjoy a text-based game with a niche theme
 - Understand how the game works at the start of the game
 - Play a game that streamlined and easy to follow along
 - Learn a touch of history about a famous serial killer
@@ -61,10 +60,12 @@ The outline of the game was made with the help of [Ludichart](https://www.lucidc
 
 The design in regard for a text based game I'm interpreting as both ASCII art, the text layout, as well as the mood.
 
+I've used very little ASCII art, only adding it to the start of the game due to time limit and needing to focus on the text, but do plan on adding more in the future when there's more time.
+
 My hopes when writing the game is provide an interesting story, so I've tried to supply the player with text in a speed that's not too rushed but simultaniously not boring, so the tension of the game isn't lost.
 The text is provided in small chunks not to make the terminal messy and to allow the player to read more easily. I've added terminal clearing where I found suitable and with the help of a friend to make the text sections less confusing.
 
-For the mood of the game I wanted to add both mystery with a touch of humor. The game is challenging in that it's easy to die, so I added named titles to every type of death (and win) to offer a bit of fun. 
+For the mood of the game I wanted to add both mystery with a touch of humor. The game is challenging in that it's easy to die, so I added named titles to every type of death (and win) to offer a bit of fun.
 
 # Features
 
@@ -81,11 +82,11 @@ For the mood of the game I wanted to add both mystery with a touch of humor. The
 - How the game ends depends entirely on the players choices throughout the game.
 - Each different death and win has its own titled ending.
 
-
 # Features Left To Implement
 
 - Create a function that stores each ending the player have gotten, so that they can "collect" endings and get everyone, and adding a special price for getting every ending.
 - Add more ASCII art to the rooms to give them more personality
+- Add a save function so the player don't have to restart the game entierly whenever they die
 
 # Testing
 
@@ -136,6 +137,8 @@ Same thing went for different endings depending on what choices the user did, so
 
 While testing, it was discovered that the buffs remained when restarting the game because the restart_game function didn't include a way to reset them. This was fixed by giving the weapon and rest variables "None" in the restart_game function, and the issue was solved.
 
+Due to the extensive amount of text, it got difficult to discern the functions, so I decided to put all the creative story bits into a separate .py file and import it to the run.py file. This made troubleshooting much easier and the overall organization of the code.
+
 ## Deployment
 
 This project was deployed via GitHub Pages and Heroku used as a development environment. From GitHub, I could commit and push my changes throughout the project that automatically got added to the project linked in Heroku.
@@ -144,34 +147,41 @@ This project was deployed via GitHub Pages and Heroku used as a development envi
 
 Steps I took to deploy my website;
 
-- Go to the repository for  Portfolio-project-2
-- Click the Settings tab and locate the Pages tab
-- Select to deploy from main branch
-- A few minutes later, upon refreshing the page, my site was live
+1. Go to the repository for Portfolio-project-3
+2. Click the Settings tab and locate the Pages tab
+3. Select to deploy from main branch
+4. A few minutes later, upon refreshing the page, my site was live
 
 For anyone wishing to Fork this repository, then do as follows;
 
-- Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
-- Up in the right corner of the repository page, on the row of buttons just beneath the user icon, you'll find the "Fork" button.
-- Click the "Fork" button, and you will now have created a copy of the repository to your GitHub account.
+1. Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
+2. Up in the right corner of the repository page, on the row of buttons just beneath the user icon, you'll find the "Fork" button.
+3. Click the "Fork" button, and you will now have created a copy of the repository to your GitHub account.
 
 To clone this repository, then do as follows;
 
-- Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
-- Click the "<> Code" button in the upper right above the files
-- Copy the link
-- Open Gitpod and from there, select which directory you want the clone to be created into.
-- Type in "git clone" in your Gitpod terminal and paste the link copied from GitHub, and the close will be created.
+1. Log in to GitHub and find your way to the GitHub repository you want, in this case, my [portfolio project 3](https://github.com/AuroraStorm-sw/Portfolio-project-3)
+ Click the "<> Code" button in the upper right above the files
+2. Copy the link
+3. Open Gitpod and from there, select which directory you want the clone to be created into.
+4. Type in "git clone" in your Gitpod terminal and paste the link copied from GitHub, and the close will be created.
 
 ## Deploying the app in Heroku:
 This was done with the help of instructions from Code Institute, and goes as follows;
 
-- Log in to Heroku or create a new account
-- On the main page up near the top, click "New" and select "Create new app"
-- Pick your unique app name and select your region
-- Click the "Create App" button
-- On the next page, manover to the "Settings" tab and find "Config Vars"
-- Click "Reveal Config Vars" and add "Port" to key and "8000" to value, then click "Add"
+To properly deploy with Heroku, I've used the [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template) that is set up to let the code that is used in the terminal to be viewed in the browser.
+
+1. Log in to Heroku or create a new account
+2. On the main page up near the top, click "New" and select "Create new app"
+3. Pick your unique app name and select your region
+4. Click the "Create App" button
+5. On the next page, manover to the "Settings" tab and find "Config Vars"
+6. Click "Reveal Config Vars" and add "Port" to key and "8000" to value, then click "Add"
+7. Scroll down the page to "Buildpack" and click "Add", then select "Python"
+8. Repeat an add "node.js" and make sure they're in that order, with Python first
+9. Scroll back up and click the "Deploy" tab
+10. Here, you select "GitHub" as deployment method and search for your repository to link them together
+11. Scroll down the page and select if you want to "Enable Automatic Deploys" to automatically deploy your pushes from GitHub to Heroku.
 
 # Tools and programs
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
@@ -189,12 +199,13 @@ This was done with the help of instructions from Code Institute, and goes as fol
 
  # Credits
 
-- How to clear the terminal for the "clear_terminal" function: (Stackoverflow)[https://stackoverflow.com/questions/2084508/clear-terminal-in-python]
-- How to write out one character at a time for the "punctuation_pause" function: (Stackoverflow)[https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line]
-- How to check if a user input is a string for entering their name: (Stackoverflow)[https://stackoverflow.com/questions/48054241/how-to-check-if-user-input-is-a-string]
-- How to use ASCII art: (GeeksForGeeks)[https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/]
+- How to clear the terminal for the "clear_terminal" function: [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+- How to write out one character at a time for the "punctuation_pause" function: [Stackoverflow](https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line)
+- How to check if a user input is a string for entering their name: [Stackoverflow](https://stackoverflow.com/questions/48054241/how-to-check-if-user-input-is-a-string)
+- How to use ASCII art: [GeeksForGeeks](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/)
 
 ## Inspiration
 Inspiration for how to build my game has been drawn from many different students on Code Institute by looking at their submitted projects and projects up for review. Examples of inspiration comes from [miriampayne](https://github.com/miriampayne/walkers-text-adventure), [wallacezone](https://github.com/wallacezone/little-dungeon/blob/master/little-dungeon.py), and [JamesFahey](https://github.com/JamesFahey/zombie-survival).
+Inspiration for the README is also drawn from these projects, and based off my own last READMEs for previous projects.
 
-Throughout the project, I've searched for answers for minor and major issues on [Stackoverflow](https://stackoverflow.com/)
+Throughout the project, I've searched for answers for minor and major issues on [Stackoverflow](https://stackoverflow.com/).

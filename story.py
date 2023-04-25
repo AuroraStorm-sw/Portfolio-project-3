@@ -1074,7 +1074,7 @@ def win_game():
     When the player wins the game, gives an option
     to restart another game or not
     """
-    
+
     global name
 
     print("\n\nWith lady luck on your side, you tug the rope to the motor, ")

@@ -5,13 +5,6 @@ import time
 import os
 import sys
 
-"""
-Måndag:
-
-- Skriv README
-"""
-
-
 # Variables
 weapon = None
 attack = None
@@ -40,6 +33,10 @@ def punctuation_pause():
         sys.stdout.flush()
         time.sleep(1)
 
+# # """""""""""""""""
+# # " GAME START-UP "
+# # """""""""""""""""
+
 
 def start_game():
     """
@@ -58,7 +55,6 @@ def start_game():
     while True:
         answer = input("> ")
         if answer == "1":
-            # room_four()
             welcome()
             break
         elif answer == "2":
@@ -72,6 +68,10 @@ def start_game():
             start_game()
         else:
             story.incorrect()
+
+# # """""""""""
+# # " WELCOME "
+# # """""""""""
 
 
 def welcome():
@@ -92,6 +92,10 @@ def welcome():
     clear_terminal()
     intro()
 
+# # """"""""""""""""
+# # " INTRODUCTION "
+# # """"""""""""""""
+
 
 def intro():
     """
@@ -104,7 +108,7 @@ def intro():
         answer = input("> ")
         if answer == "1":
             print("\nSleep well.\n\n")
-            # time.sleep(3)
+            time.sleep(3)
             room_one()
             break
         else:
